@@ -1,0 +1,22 @@
+#registry.opendata.aws
+
+Parameters:
+  KeyName:
+    Description: The EC2 key pair to allow SSH access to the instance
+    Type: AWS::EC2::KeyPair::KeyName
+Resources:
+  Ec2Instance:
+    Type: AWS::EC2::Instance
+    Properties:
+      SecurityGroups: !Ref InstanceSecurityGroup
+      KeyName: !Ref KeyName
+      ImageId: ami-70065467
+ InstanceSecurityGroup:
+   Type: AWS::EC2::SecurityGroup
+   Properties:
+     GroupDescription: Enable HTTP access via port 80
+     SecurityGroupIngress:
+     - IpProtocol: tcp
+       FromPort: '80'
+       ToPort: '80'
+       CidrIp: 0.0.0.0/0

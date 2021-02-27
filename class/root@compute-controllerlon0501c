@@ -1,0 +1,346 @@
+
+    1  read -d '' mirrors <<"EOF"
+    2  deb http://mirrors.softlayer.local/debian wheezy main non-free contrib
+    3  deb-src http://mirrors.softlayer.local/debian wheezy main non-free contrib
+    4  deb http://mirrors.softlayer.local/debian wheezy-updates main contrib non-free
+    5  deb-src http://mirrors.softlayer.local/debian wheezy-updates main contrib non-free
+    6  deb http://mirrors.softlayer.local/debian-security wheezy/updates main contrib non-free
+    7  deb-src http://mirrors.softlayer.local/debian-security wheezy/updates main contrib non-free
+    8  EOF
+    9  echo "${mirrors}" >/etc/apt/sources.list
+   10  vi /etc/apt/sources.list
+   11  vi /etc/network/interfaces
+   12  ifdown eth0
+   13  ifup eth0
+   14  ping 172.20.194.1
+   15  apt-get update
+   16  apt-get upgrade
+   17  vi /etc/apt/sources.list
+   18  apt-get dist-upgrade
+   19  apt-get update
+   20  apt-get upgrade
+   21  reboot
+   22  cat /etc/os-release
+   23  vi /etc/apt/sources.list
+   24  apt-get dist-upgrade
+   25  apt-get update
+   26  apt-get upgrade
+   27  reboot
+   28  cat /etc/os-release
+   29  apt-get update
+   30  apt-get upgrade
+   31  apt-get dist-upgrade
+   32  apt-get update
+   33  apt-get upgrade
+   34  apt --fix-broken install
+   35  cat /etc/os-release
+   36  reboot
+   37  apt-get install python-dev python-setuptools python-pip git gcc build-essential libssl-dev libffi-dev ipmitool sudo libltdl7 systemd-sysv
+   38  apt-get install python-dev python-setuptools python-pip git gcc build-essential libssl-dev libffi-dev ipmitool sudo libltdl7 systemd-sysv
+   39  pip uninstall virtualenv ; pip install virtualenv; pip uninstall requests ; pip install requests ; chmod -R a+rX /usr/lib/python*/dist-packages/ ; chmod -R a+rX /usr/local/lib/python*/dist-packages/ ; hash -r
+   40  apt-get remove resolvconf
+   41  adduser deploy1720
+   42  usermod -a -G sudo deploy1720
+   43  mkdir /home/deploy1720/.ssh
+   44  vi key
+   45  chmod 600 key
+   46  ssh-i key deploy172@172.27.64.240
+   47  deploy172@172.27.64.240
+   48  chown -R deploy1720:deploy1720 /home/deploy1720/.ssh
+   49  chmod 700 /home/deploy1720/.ssh
+   50  visudo
+   51  vi /etc/network/interfaces
+   52  vi /etc/network/interfaces
+   53  vi /etc/network/interfaces
+   54  ifup eth1:0
+   55  ip a s
+   56  vi /etc/network/interfaces
+   57  ifup eth1:0
+   58  ip a s
+   59  vi /etc/ssh/sshd_config
+   60  ssh -i key deploy1720@172.27.64.240
+   61  ssh deploy1720@172.27.64.240
+   62  vi key
+   63  cat key
+   64  ssh -i key deploy1720@172.27.64.240
+   65  ping google.com
+   66  ping 172.27.82.20
+   67  ping 172.27.82.21
+   68  cat /etc/passwd
+   69  usermod -a -G sudo deploy1720
+   70  chown -R deploy1720:deploy1720 /home/deploy1720/.ssh
+   71  chmod 700 /home/deploy1720/.ssh
+   72  ssh -i key deploy1720@172.27.64.240
+   73  mkdir /home/deploy1720/.ssh
+   74  vi /home/deploy1720/.ssh/authorized_keys
+   75  exit
+   76  ifconfig
+   77  vi /etc/network/interfaces
+   78  vi hostname
+   79  ping google.com
+   80  ping google.com
+   81  vi /etc/resolv.conf
+   82  ping 172.28.210.21
+   83  ping 172.28.210.20
+   84  ping 172.27.82.20
+   85  ping 172.27.82.21
+   86  ping 172.28.210.21
+   87  ping 172.28.210.20
+   88  ping google.com
+   89  hostname -f
+   90  vi /etc/hostname
+   91  vi /etc/hostname
+   92  hostname -f
+   93  vi /etc/hostname
+   94  ifconfig
+   95  exit
+   96  chown -R deploy1720:deploy1720 /home/deploy1720/.ssh
+   97  chmod 700 /home/deploy1720/.ssh
+   98  ssh -i key deploy1720@172.27.64.240
+   99  ssh -i key deploy1720@172.27.64.240
+  100  ssh -i key deploy1720@compute-controllerlon0501c
+  101  ssh -i key deploy1720@compute-controllerlon0501c
+  102  exit
+  103  exit
+  104  exit
+  105  exit
+  106  vi /etc/network/interfaces
+  107  ifup
+  108  ifup eth1
+  109  ip a s
+  110  ifup
+  111  apt-get update
+  112  apt-get update
+  113  ping mirrors.softlayer.local
+  114  ip r s
+  115  ip a s
+  116  ip r s
+  117  ping 172.27.64.1
+  118  ping 172.27.82.20
+  119  ping 172.27.82.21
+  120  ifdown eth1
+  121  vi /etc/network/interfaces
+  122  ifup eth1
+  123  ping 172.26.210.20
+  124  ping 172.26.210.21
+  125  ip r s
+  126  ping 172.27.64.240
+  127  vi /etc/resolv.conf
+  128  vi /etc/resolv.conf
+  129  apt-get update
+  130  apt-get ugrade
+  131  apt-get upgrade
+  132  apt-get install ssh
+  133  vi /etc/ssh/sshd_config
+  134  systemctl restart ssh
+  135  service ssh restart
+  136  vi /etc/network/interfaces
+  137  service networking restart
+  138  vi /etc/network/interfaces
+  139  vi /etc/network/interfaces
+  140  service networking restart
+  141  ifup eth1
+  142  service networking restart
+  143  vi /etc/network/interfaces
+  144  vi /etc/network/interfaces
+  145  service networking restart
+  146  ifup
+  147  ifup eth1
+  148  ifup eth1:0
+  149  vi /etc/network/interfaces
+  150  cd .ssh
+  151  ls
+  152  cd ..
+  153  ls
+  154  pwd
+  155  ls
+  156  cat key
+  157  ls
+  158  pwd
+  159  ls
+  160  cd /home
+  161  ls
+  162  cd deploy1720/
+  163  ls
+  164  cat hostname
+  165  rm hostname
+  166  rm -rf deploy-prod/
+  167  ls -al
+  168  cd .ssh/
+  169  ls
+  170  cat authorized_keys
+  171  vi authorized_keys
+  172  vi config
+  173  [A
+  174  vi config
+  175  cat authorized_keys
+  176  clear
+  177  cd /
+  178  ls
+  179  cd /
+  180  ls -al
+  181  cd /root
+  182  ls -al
+  183  rm key
+  184  ls .profile
+  185  ls -al .profile
+  186  cat .profile
+  187  cat /etc/network/interq
+  188  cat /etc/network/interfaces
+  189  vi /etc/network/interfaces
+  190  cat /etc/network/interfaces
+  191  vi /etc/network/interfaces
+  192  cat /etc/apt/sources.list
+  193  read -d '' mirrors <<"EOF"
+  194  deb http://mirrors.softlayer.local/debian stretch main non-free contrib
+  195  deb-src http://mirrors.softlayer.local/debian stretch main non-free contrib
+  196  deb http://mirrors.softlayer.local/debian stretch-updates main contrib non-free
+  197  deb-src http://mirrors.softlayer.local/debian stretch-updates main contrib non-free
+  198  deb http://mirrors.softlayer.local/debian-security stretch/updates main contrib non-free
+  199  deb-src http://mirrors.softlayer.local/debian-security stretch/updates main contrib non-free
+  200  EOF
+  201  echo "${mirrors}" >/etc/apt/sources.list
+  202  cat /etc/resolv.conf
+  203  ifconfig
+  204  service networking restart
+  205  service networking restart
+  206  cat /etc/hosts
+  207  vi /etc/hosts
+  208  ifconfig eth1
+  209  vi /etc/hosts
+  210  cat /etc/hostname
+  211  vi /etc/hostname
+  212  vi /etc/network/interfaces
+  213  pip
+  214  visudo
+  215  virtualenv --version
+  216  virtualenv
+  217  pip --version
+  218  cat /etc/os-release
+  219  apt-get dist-upgrade
+  220  apt-get autoremove
+  221  apt-get update
+  222  cat /etc/ssh/sshd_config |grep Listem
+  223  cat /etc/ssh/sshd_config |grep Listen
+  224  apt-get upgrade
+  225  systemctl
+  226  reboot
+  227  netstat -nr
+  228  route add default gw 169.254.64.1 dev eth0
+  229  netstat -nr
+  230  ifconfig eth0
+  231  vi /etc/network/interfaces
+  232  service networking restart
+  233  uptime
+  234  grep -r "172.16.0.81" /opt/vergil/
+  235  cat /opt/vergil/resources/installscripts/views/run_list.sh.erb
+  236  vi /opt/vergil/resources/installscripts/views/run_list.sh.erb
+  237  vi /opt/vergil/resources/installscripts/views/run_list.sh.erb
+  238  vi /opt/vergil/resources/installscripts/views/run_list.sh.erb
+  239  vi /opt/vergil/resources/installscripts/views/run_list.sh.erb
+  240  vergil version
+  241  vi hostname
+  242  vi /etc/hostname
+  243  hostname -f
+  244  vi /etc/network/interfaces
+  245  vi /etc/resolv.conf
+  246  apt install vergil
+  247  sudo su
+  248  e
+  249  apt-get install python-dev python-setuptools python-pip git gcc build-essential libssl-dev libffi-dev ipmitool sudo libltdl7 systemd-sysv
+  250  pip install -U pip==9.0.3 --index-url https://pypi.python.org/simple/
+  251  hash -r
+  252  pip install --upgrade distribute setuptools
+  253  pip install pyyaml requests httplib2 ansible==2.1.0.0 virtualenv
+  254  pip uninstall virtualenv ; pip install virtualenv; pip uninstall requests ; pip install requests ; chmod -R a+rX /usr/lib/python*/dist-packages/ ; chmod -R a+rX /usr/local/lib/python*/dist-packages/ ; hash -r
+  255  apt-get remove resolvconf
+  256  vi /etc/network/interfaces
+  257  vi /etc/resolv.conf
+  258  vi /etc/resolv.conf
+  259  service networking restart
+  260  sudo su -
+  261  cat /etc/network/interfaces
+  262  ifconfig
+  263  clear
+  264  cat /etc/network/interfaces
+  265  pt-get install python-dev python-setuptools python-pip git gcc build-essential libssl-dev libffi-dev ipmitool sudo libltdl7 systemd-sysv
+  266  apt-get install python-dev python-setuptools python-pip git gcc build-essential libssl-dev libffi-dev ipmitool sudo libltdl7 systemd-sysv
+  267  pip install --upgrade distribute setuptools
+  268  pip install pyyaml requests httplib2 ansible==2.1.0.0 virtualenv
+  269  ls
+  270  cat /etc/resolv.conf
+  271  nslookup 172.27.82.20
+  272  nslookup SLDCLON0401A
+  273  nslookup SLDCLON0401
+  274  ping 172.27.82.20
+  275  apt-get update
+  276  history
+  277  ping 172.16.0.81
+  278  ping 172.28.210.20
+  279  ping 172.28.192.200
+  280  ping 10.201.64.200
+  281  ping 169.254.192.200
+  282  ssh 172.28.192.142
+  283  ifconfig
+  284  vi /etc/network/interfaces
+  285  vi /etc/resolv.conf
+  286  vi /etc/resolv.conf
+  287  netstat -nr
+  288  vi /etc/resolv.conf
+  289  vi /etc/hosts
+  290  ssh is06.sr01.lon05
+  291  ssh nesheridan@is06.sr01.lon05
+  292  ssh nesheridan@is03.sr01.lon05
+  293  ssh nesheridan@is04.sr01.lon05
+  294  ssh nesheridan@is06.sr01.lon05
+  295  ssh nesheridan@is07.sr01.lon05
+  296  ssh nesheridan@is06.sr01.lon05
+  297  ssh nesheridan@is04.sr01.lon05
+  298  ssh nesheridan@is07.sr01.lon05
+  299  exit
+  300  ssh nesheridan@is03.sr01.lon05
+  301  ssh nesheridan@is04.sr01.lon05
+  302  ssh nesheridan@is06.sr01.lon05
+  303  ssh nesheridan@is07.sr01.lon05
+  304  /opt/vergil/bin/vergil ipxeboot status
+  305  /opt/vergil/bin/vergil ipxeboot set ac:1f:6b:0d:d1:56 osinstall (vlan101 172.)
+  306  /opt/vergil/bin/vergil ipxeboot set ac:1f:6b:0d:cc:c6 osinstall
+  307  /opt/vergil/bin/vergil ipxeboot set ac:1f:6b:0d:cc:5a osinstall
+  308  /opt/vergil/bin/vergil ipxeboot set ac:1f:6b:58:71:90 osinstall
+  309  /opt/vergil/bin/vergil ipxeboot set ac:1f:6b:58:70:c0 osinstall
+  310  /opt/vergil/bin/vergil ipxeboot status
+  311  vi /opt/vergil/config/inventory.yaml
+  312  service vergil restart
+  313  ipmitool -H 169.254.64.241 -I lanplus -U ADMIN -P QCqJ4vjuq9 chassis power reset
+  314  ipmitool -H 169.254.64.242 -I lanplus -U ADMIN -P Z2p73rk5st chassis power reset
+  315  ipmitool -H 169.254.64.243 -I lanplus -U ADMIN -P T4FyftE4wq chassis power reset
+  316  ipmitool -H 169.254.64.244 -I lanplus -U ADMIN -P Ljn2CLKxqM chassis power reset
+  317  ipmitool -H 169.254.64.245 -I lanplus -U ADMIN -P EEwDb9daF2 chassis power reset
+  318  ifconfig eth1:0
+  319  grep -r "172.16.0.80" /opt/vergil/
+  320  vi /opt/vergil/resources/installscripts/views/run_list.sh.erb
+  321  grep -r "172.16.0.80" /opt/vergil/
+  322  vi /opt/vergil/config/vergil.yaml
+  323  grep -r "172.16.0.80" /opt/vergil/
+  324  ipmitool -H 169.254.64.241 -I lanplus -U ADMIN -P QCqJ4vjuq9 chassis power reset
+  325  ipmitool -H 169.254.64.242 -I lanplus -U ADMIN -P Z2p73rk5st chassis power reset
+  326  ipmitool -H 169.254.64.243 -I lanplus -U ADMIN -P T4FyftE4wq chassis power reset
+  327  ipmitool -H 169.254.64.244 -I lanplus -U ADMIN -P Ljn2CLKxqM chassis power reset
+  328  ipmitool -H 169.254.64.245 -I lanplus -U ADMIN -P EEwDb9daF2 chassis power reset
+  329  ssh nesheridan@is07.sr01.lon05
+  330  su deploy1720
+  331  ssh mss06.sr01.lon05
+  332  ssh nesheridan@mss06.sr01.lon05
+  333  ssh nesheridan@mss03.sr01.lon05
+  334  eit
+  335  exit
+  336  su deploy1720
+  337  exit
+  338  ssh nesheridan@mss04.sr01.lon05
+  339  ssh nesheridan@mss07.sr01.lon05
+  340  ssh nesheridan@mss07.sr02.lon05
+  341  ssh nesheridan@mss06.sr02.lon05
+  342  ssh nesheridan@mss06.sr01.lon05
+  343  exit
+  344  history
+root@compute-controllerlon0501c:~#

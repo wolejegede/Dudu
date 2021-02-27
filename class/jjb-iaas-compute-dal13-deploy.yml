@@ -1,0 +1,82 @@
+- job:
+    name: iaas/compute/jjb-iaas-compute-dal13-prod-deploy
+    scm:
+      - iaas
+    project-type: freestyle
+    description: 'deploy production dal13, iaas compute, jjb'
+    disabled: false
+    properties:
+        - build-discarder:
+            num-to-keep: 10
+    parameters:
+        - choice:
+            name: PLAYBOOK
+            choices:
+            - seed_osscontroller.yml
+            - seed_security.yml
+            - seed_elasticsearch.yml
+            - seed_esutil.yml
+            - seed_externalAgent.yml
+            - seed_kafka.yml
+            - seed_kibana.yml
+            - seed_logstash.yml
+            - seed_mlr.yml
+            - other
+            description: "Select the playbook you wish to run in this production environment."
+        - string:
+            name: PLAYBOOK_OTHER
+            description: "If the above PLAYBOOK option is set to 'other' enter the full name of a playbook you wish to run."
+        - string:
+            name: TARGET_HOST
+            description: "Verbosity or host/group of host that you want to run your deployment in format: --limit node_name or first five nodes nodes[1:5]"
+    builders:
+        - shell: |
+            #!/bin/bash
+            set -ex
+            export RUN_ENV=prod
+            export RUN_SITE=iaas-compute-dal13-onSL
+            export SOURCE_BRANCH=uat
+            export TARGET_BRANCH=prod
+            export USERNAME=deploy1720
+            export HOSTNAME=169.48.70.51
+            export DESCRIBE=${TARGET_HOST}
+            if [ "${PLAYBOOK}" = "other" ] ; then
+                export PLAYBOOK=${PLAYBOOK_OTHER}
+            else
+                export PLAYBOOK=${PLAYBOOK}
+            fi
+            set +x
+            CICD_VAULT_SECRET_KEY=`cat "$CICD_VAULT_SECRET_KEY"`
+            set -x
+            tools/jenkins-run-seed.sh -vvvv
+    wrappers:
+        - ansicolor
+        - build-name:
+            name: '#${BUILD_NUMBER} ${ENV,var="PLAYBOOK"} ${ENV,var="PLAYBOOK_OTHER"}'
+        - ssh-agent-credentials:
+            users:
+               - deploy1720
+               - cleversafe-ansible
+        - credentials-binding:
+            - file:
+                credential-id: radius_secret
+                variable: PRADIUS
+        - credentials-binding:
+            - file:
+                credential-id: ldapbindpw
+                variable: PLDAP
+        - credentials-binding:
+            - file:
+                credential-id: cicd-ansible-vault-prod.key
+                variable: CICD_VAULT_SECRET_KEY
+    publishers:
+        - slack:
+            team-domain: 'ibm-cloudplatform'
+            room: '#sl-storage-cicd-open'
+            auth-token: 'ibm-cloudplatform-token'
+            commit-info-choice: 'AUTHORS_AND_TITLES'
+            notify-success: true
+            notify-aborted: true
+            notify-unstable: true
+            notify-failure: true
+            notify-repeated-failure: true

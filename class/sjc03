@@ -1,0 +1,100 @@
+root@compute-controllersjc0301c:~# history
+    1  read -d '' mirrors <<"EOF"
+    2  deb http://mirrors.softlayer.local/debian wheezy main non-free contrib
+    3  deb-src http://mirrors.softlayer.local/debian wheezy main non-free contrib
+    4  deb http://mirrors.softlayer.local/debian wheezy-updates main contrib non-free
+    5  deb-src http://mirrors.softlayer.local/debian wheezy-updates main contrib non-free
+    6  deb http://mirrors.softlayer.local/debian-security wheezy/updates main contrib non-free
+    7  deb-src http://mirrors.softlayer.local/debian-security wheezy/updates main contrib non-free
+    8  EOF
+    9  echo "${mirrors}" >/etc/apt/sources.list
+   10  vi /etc/apt/sources.list
+   11  vi /etc/network/interfaces
+   12  ifdown eth0
+   13  ifup eth0
+   14  ping 172.20.194.1
+   15  apt-get update
+   16  apt-get upgrade
+   17  vi /etc/apt/sources.list
+   18  apt-get dist-upgrade
+   19  apt-get update
+   20  apt-get upgrade
+   21  reboot
+   22  cat /etc/os-release
+   23  vi /etc/apt/sources.list
+   24  apt-get dist-upgrade
+   25  apt-get update
+   26  apt-get upgrade
+   27  reboot
+   28  cat /etc/os-release
+   29  apt-get update
+   30  apt-get upgrade
+   31  apt-get dist-upgrade
+   32  apt-get update
+   33  apt-get upgrade
+   34  apt --fix-broken install
+   35  cat /etc/os-release
+   36  reboot
+   37  vi /etc/network/interfaces
+   38  ifup eth0
+   39  ifup eth1
+   40  ifup eth2
+   41  ifup eth1:0
+   42  vi /etc/resolv.conf
+   43  vi /etc/hostname
+   44  service networking restart
+   45  ip a s
+   46  ip r s
+   47  ping 172.19.82.20
+   48  vi /etc/ssh/ssh_config
+   49  exit
+   50  reboot
+   51  apt-get update
+   52  apt-get upgrade
+   53  apt-get install ssh
+   54  systemctl ssh service restart
+   55  service ssh restart
+   56  vi /etc/ssh/sshd_config
+   57  reboot
+   58  service ssh restart
+   59  exit
+   60  vi /etc/ssh/sshd_config
+   61  vi /etc/ssh/sshd_config
+   62  service ssh restart
+   63  /opt/vergil/bin/vergil ipxeboot status
+   64  ipmitool -H 169.254.64.241 -I lanplus -U ADMIN -P AmK2J6QHbu chassis status
+   65  ipmitool -H 169.254.64.241 -I lanplus -U ADMIN -P AmK2J6QHbu chassis power on
+   66  ipmitool -H 169.254.64.241 -I lanplus -U ADMIN -P AmK2J6QHbu chassis status
+   67  ipmitool -H 169.254.64.241 -I lanplus -U ADMIN -P AmK2J6QHbu sol activate
+   68  reset
+   69  ipmitool -H 169.254.64.242 -I lanplus -U ADMIN -P NxdmCWV6T6 chassis status
+   70  ipmitool -H 169.254.64.243 -I lanplus -U ADMIN -P Gk6b385a8f chassis status
+   71  ipmitool -H 169.254.64.244 -I lanplus -U ADMIN -P USfh4AZeWy chassis status
+   72  ipmitool -H 169.254.64.245 -I lanplus -U ADMIN -P TvdKM7RqWH chassis status
+   73  ipmitool -H 169.254.64.242 -I lanplus -U ADMIN -P NxdmCWV6T6 chassis power on
+   74  ipmitool -H 169.254.64.243 -I lanplus -U ADMIN -P Gk6b385a8f chassis power on
+   75  ipmitool -H 169.254.64.244 -I lanplus -U ADMIN -P USfh4AZeWy chassis power on
+   76  ipmitool -H 169.254.64.245 -I lanplus -U ADMIN -P TvdKM7RqWH chassis power on
+   77  grep -r "172.16.0.80" /opt/vergil/
+   78  i /opt/vergil/resources/installscripts/views/run_list.sh.erb
+   79  vi /opt/vergil/resources/installscripts/views/run_list.sh.erb
+   80  vi /etc/dnsmasq.conf
+   81  vi /etc/dnsmasq.d/ospxeboot.conf
+   82  service vergil restart
+   83  ipmitool -H 169.254.64.241 -I lanplus -U ADMIN -P AmK2J6QHbu chassis power reset
+   84  ipmitool -H 169.254.64.242 -I lanplus -U ADMIN -P NxdmCWV6T6 chassis power reset
+   85  ipmitool -H 169.254.64.243 -I lanplus -U ADMIN -P Gk6b385a8f chassis power reset
+   86  ipmitool -H 169.254.64.244 -I lanplus -U ADMIN -P USfh4AZeWy chassis power reset
+   87  ipmitool -H 169.254.64.245 -I lanplus -U ADMIN -P TvdKM7RqWH chassis power reset
+   88  su deploy1720
+   89  exit
+   90  vi /etc/network/interfaces
+   91  vi /etc/apt/sources.list
+   92  exit
+   93  ipmitool -H 169.254.64.241 -I lanplus -U ADMIN -P AmK2J6QHbu sol activate
+   94  vi /opt/vergil/config/inventory.yaml
+   95  service vergil restart
+   96  system
+   97  systemctl
+   98  history
+root@compute-controllersjc0301c:~#

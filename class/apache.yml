@@ -1,0 +1,50 @@
+- name: installing apache2 server
+  apt:
+    name: "apache2"
+    update_cache: yes
+    state: present
+
+- name: updating customized templates for apache2 configuration
+  template:
+    src: "{{ item.src }}"
+    dest: "{{ item.dst }}"
+    mode: 0644
+
+  with_tems:
+    - { src: apache2.conf.j2, dst: /etc/apache2/conf.d/apache2.conf }
+    - { src: 000-default.conf.j2, dst: /etc/apache2/sites-available/000-default.conf }
+    - { src: default-ssl.conf.j2, dst: /etc/apache2/sites-available/default-ssl.conf }
+
+- name: adding custom link for sites-enabled from sites-available
+  file:
+    src: "{{ item.src }}"
+    dest: "{{ item.dest }}"
+    state: link
+
+  with_items:
+    - { src: '/etc/apache2/sites-available/000-default...
+
+
+
+
+
+---
+
+- name: create module config file
+  template: src=etc/apache2/conf-available/module.conf.j2 dest="{{ apache_module_config_file_path }}"
+
+- name: add module configuration to default apache virtual host
+  lineinfile: dest=/etc/apache2/sites-available/default line="    include {{ apache_wsgi_config_file_path }}" insertafter="# Marker - Apache module configuration" state=present
+  notify:
+    - Restart Apache
+  when: ansible_distribution_version == "12.04"
+
+- name: add module configuration to default apache virtual host
+  lineinfile: dest=/etc/apache2/sites-available/000-default.conf line="    include {{ apache_wsgi_config_file_path }}" insertafter="# Marker - Apache module configuration" state=present
+  notify:
+    - Restart Apache
+  when: ansible_distribution_version | version_compare('9', '>='))
+
+
+
+    ansible_distribution_version == "14.04"

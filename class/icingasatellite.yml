@@ -1,0 +1,24 @@
+# Icinga2
+icinga2_zones_d: "/etc/icinga2/zones.d/"
+icinga2_primary_master_host: "ossipemasterdal1201a"
+icinga2_primary_master_ip: "10.184.23.144"
+icinga2_primary_master_fqdn: "{{ icinga2_primary_master_host }}.softlayer.local"
+icinga2_satellite_name: "compipesat{{ datacenter }}01"
+icinga2_satellite_hostname: "{{ icinga2_satellite_name }}a.softlayer.local"
+icinga2_monitor_zone: "comp-{{ datacenter_type }}-{{ datacenter}}"
+icinga2_zone_info:
+  parentZone:
+    zone: "us-on-dal12"
+    endpoints:
+      - fqdn: "{{ icinga2_primary_master_fqdn }}"
+        ip: "{{ icinga2_primary_master_ip }}"
+      - fqdn: "ossipemasterdal1201b.softlayer.local"
+        ip: "10.184.23.143"
+  childZone:
+    - zone: "{{ icinga2_monitor_zone }}"
+      parentZone: "us-on-dal12"
+      endpoints:
+        - fqdn: "{{ icinga2_satellite_hostname }}"
+          ip: 10.200.80.240
+        - fqdn: "{{ icinga2_satellite_name }}b.softlayer.local"
+          ip: 10.200.80.241

@@ -1,0 +1,504 @@
+root@compute-controllersjc0101c:~# history
+      ip a flush dev eth1
+
+    2  ping 172.23.18.28
+    3  ping 172.23.18.29
+    4  ping 172.23.18.23
+    5  ping 172.23.18.24
+    6  ping 172.23.18.27
+    7  ping 172.19.82.20
+    8  ping 172.19.82.21
+    9  ping 172.27.210.20
+   10  ifdown eth0
+   11  ifdown eth1
+   12  ifdown eth2
+   13  ifdown eth1:0
+   14  ip r s
+   15  ip a s
+   16  vi /etc/network/interfaces
+   17  ifup eth0
+   18  ifup eth1
+   19  ifup eth2
+   20  ifup eth1:0
+   21  ip a s
+   22  ip r s
+   23  ping 172.19.82.20
+   24  ping 172.19.82.20
+   25  service networking restart
+   26  ping 172.19.82.20
+   27  vi /etc/resolv.conf
+   28  ping 172.23.18.28
+   29  ip a s
+   30  ip r s
+   31  ip a s
+   32  service networking restart
+   33  ping google.com
+   34  vi /etc/apt/sources.list
+   35  vi /etc/network/interfaces
+   36  ifup eth0
+   37  ip a s
+   38  ip r s
+   39  vi /etc/resolv.conf
+   40  vi /etc/network/interfaces
+   41  vi /etc/resolv.conf
+   42  ifup eth0
+   43  ip a s
+   44  reboot
+   45  ifup eth0
+   46  service networking restart
+   47  vi /etc/resolv.conf
+   48  service networking restart
+   49  ip r s
+   50  ping 172.23.0.240
+   51  ping google
+   52  ping google.com
+   53  ping www.google.com
+   54  ping 172.19.82.20
+   55  ping 172.23.0.240
+   56  vi /etc/resolv.conf
+   57  service networking restart
+   58  ip a s
+   59  less /etc/network/interfaces
+   60  ping 172.23.0.1
+   61  ip link show eth1
+   62  ifdown eth1
+   63  ifup eth1
+   64  ip r s
+   65  ip a s
+   66  ping 172.23.0.1
+   67  ping 172.23.0.240
+   68  ip a s
+   69  ping 172.23.0.240
+   70  ping 172.23.0.1
+   71  ifdown eth1
+   72  ip r s
+   73  ping 10.1.192.1
+   74  ifup eth1
+   75  ip a s
+   76  ping 172.23.0.1
+   77  ifdown eth1
+   78  dmesg -T | grep -i eth
+   79  ip a s
+   80  ping 172.23.0.1
+   81  less /etc/network/interfaces
+   82  ip l show
+   83  vi /etc/network/interfaces
+   84  vi /etc/network/interfaces
+   85  ifup eth1
+   86  ifdown eth1
+   87  ip a s eth1
+   88  ip r s
+   89  ifup eth1
+   90  ip r s
+   91  ip a s eth1
+   92  ping 172.23.69.1
+   93  ip l show
+   94  ip l show
+   95  ifdown eth1
+   96  vi /etc/network/interfaces
+   97  ifup eth3
+   98  ip l show
+   99  ip a s eth3
+  100  ping 172.23.69.1
+  101  cat /etc/network/interfaces
+  102  ifconfig
+  103  vi /etc/hostname
+  104  vi /etc/network/interfaces
+  105  reboot
+  106  ifconfig
+  107  ifconfig eth1
+  108  ping 172.23.0.1
+  109  ifconfig eth2
+  110  ping 10.1.192.1
+  111  cat /etc/resolv.conf
+  112  cat /etc/apt/sources.list
+  113  apt-get update
+  114  ifconfig
+  115  ig eth1
+  116  ifconfig eth1
+  117  w
+  118  q
+  119  w
+  120  ip a s
+  121  ifdown eth1
+  122  ifup eth1
+  123  ip r s
+  124  ping 172.23.0.1
+  125  wait
+  126  trying to fix
+  127  tell Wole to check his slack
+  128  vi /etc/resolv.conf
+  129  service networking re
+  130  service networking restart
+  131  ifconfig eth1
+  132  ping 172.23.0.1
+  133  vi /etc/hostname
+  134  vi /etc/hosts
+  135  vi /etc/network/interfaces
+  136  ifconfig
+  137  ping 172.23.69.1
+  138  ifconfig eth1
+  139  ping  172.23.69.1
+  140  ifdown eth1
+  141  ifconfig eth1
+  142  vi /etc/network/interfaces
+  143  ifup eth1
+  144  ifconfig eth1
+  145  ping 172.23.0.1
+  146  vi /etc/resolv.conf
+  147  apt-get update
+  148  ifconfig eth1
+  149  ifconfig eth2
+  150  ping 10.1.192.240
+  151  ifconfg eth0
+  152  ifconfig eth0
+  153  ping 169.254.0.1
+  154  clear
+  155  ping google.com
+  156  cat /etc/resolv.conf
+  157  ping 172.19.82.20
+  158  ip a
+  159  ifdown eth1:0
+  160  ip a
+  161  ping 172.23.0.1
+  162  cat /etc/os-release
+  163  vi /etc/resolv.conf
+  164  apt-get update
+  165  ifconfig
+  166  ifconfig eth1
+  167  cat /etc/resolv.conf
+  168  vi /etc/network/interfaces
+  169  vi /etc/network/interfaces
+  170  ifdown eth1
+  171  vi /etc/network/interfaces
+  172  ifup eth1
+  173  ifconfig eth1
+  174  apt-get update
+  175  reboot
+  176  ifconfig eth1
+  177  ip route
+  178  ping 172.23.2.1
+  179  cat /etc/resolv.conf
+  180  ls -al /etc/apt/
+  181  cat /etc/network/interfaces
+  182  ifdown eth1
+  183  ifconfig eth1
+  184  vi /etc/network/interfaces
+  185  ifconfig eth0
+  186  ifconfig eth1
+  187  ifdown eth1
+  188  ifconfig eth1
+  189  vi /etc/network/interfaces
+  190  service networking restart
+  191  ifconfig eth1
+  192  ping 172.23.2.1
+  193  apt-get update
+  194  apt-get update
+  195  ifdown eth1
+  196  vi /etc/network/interfaces
+  197  cat /etc/resolv.conf
+  198  ifconfig eth0
+  199  ifconfig eth1
+  200  pinf 172.23.0.1
+  201  ping 172.23.0.1
+  202  cclear
+  203  clear
+  204  exit
+  205  ifconfig eth1
+  206  ping 172.23.0.1
+  207  cat /etc/resolv.conf
+  208  cat /etc/network/interfaces
+  209  vi /etc/network/interfaces
+  210  ifdown eth1
+  211  ifconfig eth1
+  212  vi /etc/network/interfaces
+  213  ifup eth1
+  214  ifconfig eth1
+  215  ping 172.23.0.1
+  216  ifdown eth1
+  217  ifup eth1
+  218  ifconfig eth1
+  219  ping 172.23.0.1
+  220  ping 172.23.2.1
+  221  ifconfig eth1
+  222  ifdown eth1
+  223  vi /etc/network/interfaces
+  224  ifup eth1
+  225  ifconfig eth1
+  226  ping 172.23.2.1
+  227  ifconfig eth1
+  228  ifdown eth1
+  229  ifup eth1
+  230  ifconfig eth1
+  231  ping 172.23.2.1
+  232  ping 172.23.0.1
+  233  ifdown eth1
+  234  ifconfig eth1
+  235  ping 172.23.0.1
+  236  ifup eth1
+  237  ping 172.23.0.1
+  238  ping 172.23.2.1
+  239  ifconfig eth1
+  240  ifup eth1
+  241  ifconfig eth1
+  242  ifup eth1
+  243  ifdown eth1
+  244  ifup eth1
+  245  ifconfig eth1
+  246  ping 172.23.2.1
+  247  ifdown eth1
+  248  ping 172.23.2.1
+  249  vi /etc/network/interfaces
+  250  ifup eth1
+  251  ifconfig eth1
+  252  ping 172.23.0.1
+  253  ping 172.23.2.1
+  254  ifconfig eth1
+  255  ifdown eth1
+  256  ifup eth1
+  257  ifconfig eth1
+  258  ping 172.23.0.1
+  259  cat /etc/network/interfaces
+  260  ping 172.23.0.1
+  261  ip a
+  262  ping 10.1.192.240
+  263  ip a
+  264  ping 172.23.0.240
+  265  ping 172.23.0.1
+  266  ip r
+  267  ifdown eth1
+  268  ifup eth1
+  269  ifconfig eth1
+  270  ping 172.23.0.1
+  271  ping 172.23.0.1
+  272  vi /etc/resolv.conf
+  273  service networking restart
+  274  ping google.com
+  275  ping 172.19.82.20
+  276  apt-get update
+  277  apt-get upgrade
+  278  ip a s
+  279  ip r s
+  280  ifup eth0
+  281  ifup eth1
+  282  2
+  283  ifup eth2
+  284  ifup eth1:0
+  285  vi /etc/ssh/sshd_config
+  286  reboot
+  287  reboot
+  288  ip a s
+  289  ping 172.23.18.28
+  290  service networking restart
+  291  apt-get install ssh
+  292  vi /etc/ssh/sshd_config
+  293  service ssh restart
+  294  ifconfig
+  295  vi /etc/ssh/sshd_config
+  296  service ssh restart
+  297  cat /etc/resolv.conf
+  298  w
+  299  systemctl
+  300  service vergil status
+  301  if config
+  302  ifconfig
+  303  vi /etc/network/interfaces
+  304  /opt/vergil/bin/vergil ipxeboot status
+  305  vi /etc/resolv.conf
+  306  vi /opt/vergil/config/inventory.yaml
+  307  vi /opt/vergil/resources/installscripts/views/run_list.sh.erb
+  308  ipmitool -H 169.254.0.241 -I lanplus -U ADMIN -P Kmt6HJ5Yar chassis power status
+  309  ipmitool -H 169.254.192.242 -I lanplus -U ADMIN -P RSSuYjLsu4 chassis power reset
+  310  ipmitool -H 169.254.0.242 -I lanplus -U ADMIN -P KJc2gb4lfv chassis power status
+  311  ipmitool -H 169.254.0.243 -I lanplus -U ADMIN -P Cv9LdMjMZr chassis power status
+  312  ipmitool -H 169.254.0.244 -I lanplus -U ADMIN -P S46l85eUYr chassis power status
+  313  ipmitool -H 169.254.0.245 -I lanplus -U ADMIN -P PXPSu5pdqE chassis power status
+  314  /opt/vergil/bin/vergil ipxeboot status
+  315  grep -r "172.16.0.80" /opt/vergil/
+  316  vi /opt/vergil/config/vergil.yaml
+  317  grep -r "172.16.0.80" /opt/vergil/
+  318  grep -r "172.16.0.80" /etc/dnsmasq.d
+  319  grep -r "172.16.0.80" /etc/dnsmasq.d/ospxeboot.conf
+  320  ifconfig eth1:0
+  321  ifconfig
+  322  ping 172.23.0.240
+  323  ipmitool -H 169.254.0.241 -I lanplus -U ADMIN -P Kmt6HJ5Yar chassis power status
+  324  /opt/vergil/bin/vergil ipxeboot status
+  325  ipmitool -H 169.254.0.241 -I lanplus -U ADMIN -P Kmt6HJ5Yar chassis power status
+  326  ipmitool -H 169.254.0.242 -I lanplus -U ADMIN -P KJc2gb4lfv chassis power status
+  327  ipmitool -H 169.254.0.243 -I lanplus -U ADMIN -P Cv9LdMjMZr chassis power status
+  328  ipmitool -H 169.254.0.244 -I lanplus -U ADMIN -P S46l85eUYr chassis power status
+  329  ipmitool -H 169.254.0.245 -I lanplus -U ADMIN -P PXPSu5pdqE chassis power status
+  330  ipmitool -H 169.254.0.245 -I lanplus -U ADMIN -P PXPSu5pdqE sol activate
+  331  reset
+  332  ipmitool -H 169.254.0.241 -I lanplus -U ADMIN -P Kmt6HJ5Yar chassis power reset
+  333  ipmitool -H 169.254.0.242 -I lanplus -U ADMIN -P KJc2gb4lfv chassis power reset
+  334  ipmitool -H 169.254.0.243 -I lanplus -U ADMIN -P Cv9LdMjMZr chassis power reset
+  335  ipmitool -H 169.254.0.244 -I lanplus -U ADMIN -P S46l85eUYr chassis power reset
+  336  ipmitool -H 169.254.0.245 -I lanplus -U ADMIN -P PXPSu5pdqE chassis power reset
+  337  service vergil restart
+  338  service nginx  restart
+  339  service dnsmasq restart
+  340  ifconfig
+  341  vi /etc/dnsmasq.d/ospxeboot.conf
+  342  tail /var/log/syslog
+  343  tail /var/log/syslog /var/lib/misc/dnsmasq.leases
+  344  tail -f /var/log/syslog /var/lib/misc/dnsmasq.leases
+  345  service dnsmasq status
+  346  service dnsmasq stop
+  347  service dnsmasq status
+  348  service dnsmasq start
+  349  systemctl status dnsmasq.service
+  350  w
+  351  reboot
+  352  exit
+  353  nslookup 172.23.18.28
+  354  apt-get update
+  355  cat /etc/apt/sources.list
+  356  virtualenv --version
+  357  pipp --version
+  358  pip --version
+  359  visudo
+  360  tail -f /var/log/syslog /var/lib/misc/dnsmasq.leases
+  361  vi /etc/network/interfaces
+  362  nslookup  172.23.18.28
+  363  ifconfig eth1
+  364  ifconfig eth1:1
+  365  ifconfig eth1:1
+  366  ifup eth1:1
+  367  ifconfig eth1:0
+  368  tail /var/log/nginx/
+  369  tail /var/log/nginx/access.log
+  370  grep -r "172.16.0.80" /etc/dnsmasq.d/ospxeboot.conf
+  371  grep -r "172.16.0.80" /etc/dnsmasq.d
+  372  grep -r "172.16.0.80" /opt/vergil/
+  373  systemctl status vergil.service
+  374  ifconfig eth1
+  375  ifconfig eth1:0
+  376  cat /etc/resolv.conf
+  377  tail -f /var/log/nginx/access.log /var/log/syslog /var/lib/misc/dnsmasq.leases
+  378  tail -f /var/log/nginx/access.log /var/log/syslog /var/lib/misc/dnsmasq.leases
+  379  /opt/vergil/bin/vergil ipxeboot status
+  380  ifconfig eth1:0
+  381  ifup eth1:0
+  382  ifconfig eth1:0
+  383  ifdown eth1:0
+  384  ifup eth1:0
+  385  ifconfig eth1:0
+  386  /opt/vergil/bin/vergil ipxeboot status
+  387  /opt/vergil/bin/vergil ipxeboot set 0c:c4:7a:66:26:c8 osinstall
+  388  vi /opt/vergil/config/inventory.yaml
+  389  service vergil restart
+  390  ipmitool -H 169.254.0.243 -I lanplus -U ADMIN -P Cv9LdMjMZr chassis power reset
+  391  ipmitool -H 169.254.0.244 -I lanplus -U ADMIN -P S46l85eUYr chassis power reset
+  392  ipmitool -H 169.254.0.245 -I lanplus -U ADMIN -P PXPSu5pdqE chassis power reset
+  393  su deploy1720
+  394  ping google.com
+  395  su deploy1720
+  396  su deploy1720
+  397  iptables
+  398  iptables -l
+  399  iptables
+  400  iptables -list
+  401  iptables -L
+  402  nslookup compmlbsjc0101d
+  403  nslookup compmlbsjc0101e
+  404  nslookup compmlbsjc0101a
+  405  nslookup 172.23.2.241
+  406  mslookup compute-controllersjc0101c
+  407  nslookup compute-controllersjc0101c
+  408  vi /etc/hosts
+  409  vi /etc/hosts
+  410  vi /etc/hosts
+  411  ifconfig eth1
+  412  vi /etc/hosts
+  413  nslookup ossclevmanageus.softlayer.local
+  414  nslookup ossclevmanageus.softlayer.local
+  415  nslookup compute-controllersjc0101c
+  416  exit
+  417  cat /etc/resolv.conf
+  418  tail /var/log/nginx/access.log
+  419  tail -100 /var/log/nginx/access.log
+  420  w
+  421  ifconfig eth1
+  422  ifdown eth1
+  423  ifup eth1
+  424  q
+  425  q
+  426  w
+  427  ifdown eth1
+  428  ifup eth1
+  429  ifdown eth1
+  430  vi /etc/network/interfaces
+  431  ifup eth1
+  432  ifconfig eth1
+  433  apt-get update
+  434  cat /etc/resolv.conf
+  435  nslookup  172.23.18.28
+  436  ifconfig eth1
+  437  ping 172.23.2.1
+  438  apt-get update
+  439  vi /etc/resolv.comn
+  440  vi /etc/resolv.conf
+  441  ping 172.23.2.1
+  442  apt-get update
+  443  service ssh restart
+  444  vi /etc/ssh/sshd_config
+  445  ifconfig eth1
+  446  apt-get update
+  447  service dnsmasq restart
+  448  service  nginx restart
+  449  ifdown eth1:0
+  450  ifdown eth1
+  451  vi /etc/network/interfaces
+  452  ifup eth1
+  453  ifconfig eth1
+  454  apt-get update
+  455  ping 172.23.0.1
+  456  ifup eth1:0
+  457  service vergil restart
+  458  service dnsmasq restart
+  459  service nginx  restart
+  460  ifconfig eth1:0
+  461  ifconfig eth1
+  462  tail -f /var/log/syslog /var/log/nginx/access.log
+  463  tail -f /var/log/nginx/access.log
+  464  service nginx restart
+  465  service nginx  status
+  466  service nginx stop
+  467  rm -rf /var/tmp/nginx*
+  468  service nginx start
+  469  service nginx status
+  470  tail -f /var/log/nginx/access.log
+  471  ifdown eth1:0
+  472  ifdown eth1
+  473  ifup eth1
+  474  ifup eth1:0
+  475  ifconfig eth1
+  476  ifconfig eth1:0
+  477  ifdown eth1
+  478  ifdown eth1:0
+  479  vi /etc/network/interfaces
+  480  ifup eth1
+  481  ifup eth1:0
+  482  ifconfig eth1
+  483  ping 172.23.2.1
+  484  service dnsmasq restart
+  485  service vergil restart
+  486  exit
+  487  nslookup compmlbsjc0101a
+  488  nslookup compute-controllersjc0101c
+  489  vi /opt/vergil/config/inventory.yaml
+  490  nslookup 172.23.0.240
+  491  vi /etc/apt/sources.list
+  492  vi /etc/hosts
+  493  cat /etc/apt/apt.conf.d/
+  494  cat /etc/resolv
+  495  cat /etc/resolv.conf
+  496  service nginx stop
+  497  rm -rf /var/tmp/nginx*
+  498  service nginx start
+  499  su deploy1720
+  500  /opt/vergil/bin/vergil ipxeboot status
+  501  history
+root@compute-controllersjc0101c:~#

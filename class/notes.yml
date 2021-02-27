@@ -1,0 +1,240 @@
+NOTES
+
+deploy1720@compute-controllerpar0601c:/root$ ssh -i /etc/osscontroller/control osscontrol@172.28.224.241
+t34msh0v3l
+git clone git@github.ibm.com:cleversafe-infra/cleversafe-jjb
+sudo iptables -S
+Firewall is up and ciphers are configured
+
+Troubleshooting network allow into the kafka
+ojegede@compmlbfra0201a:~$ ssh 172.23.128.140
+ojegede@compute-controllerfra0201c:/$ sudo su -
+root@compute-controllerfra0201c:~# cd /home/deploy1720/
+root@compute-controllerfra0201c:/home/deploy1720# ls
+deploy-prod
+root@compute-controllerfra0201c:/home/deploy1720# cd deploy-prod/
+root@compute-controllerfra0201c:/home/deploy1720/deploy-prod# ls -la
+root@compute-controllerfra0201c:/home/deploy1720/deploy-prod# cd 8
+root@compute-controllerfra0201c:/home/deploy1720/deploy-prod/8# ls
+
+ojegede@oss-managedal0101:~$ vi key
+ojegede@oss-managedal0101:~$ chmod 600 key
+ojegede@oss-managedal0101:~$ ssh -i key deploy1720@172.23.192.240
+
+ojegede@oss-managesjc0301:~$ ssh -i key -l deploy1720 compute-controllersyd0401c
+
+Create jjb-wdc04-iaas-compute-production-inSL.yml
+git commit -m "fix conflict"
+git reset --hard origin/master
+ggit push -u origin STORSHARE-189a
+
+To copy those files back into that branch: from 189a to 189b but be on branch 189b (after you run git status on 189b you will find all files new on it)
+git checkout STORSHARE-189a -- envs/prod/iaas-compute-tok02-inSL/ansible.cfg
+git commit -m "STORSHARE-189b:creating iaas-compute-tok02-inSL"
+git push origin STORSHARE-189b
+git commit --allow-empty -m "allow empty commit"
+
+git log
+git remove -v
+git push --set-upstream origin STORSHARE-1627-syd05
+git rebase -i master
+git reflog
+git rebase --abort
+git push --force
+
+
+
+SWITCHES
+ojegede@oss-managedal0101:~$ ssh utilityfra0501
+[ojegede@utilityfra0501 ~]$ grep -i "is07" /etc/hosts
+ojegede@oss-managedal0101:~$ ssh 198.18.212.47
+is07.sr01.fra05#show int description
+
+ojegede@oss-managedal0101:~$ ssh shellnetdal0501
+[ojegede@shellnetdal0501 ~]$ ssh mss04.sr01.tok04
+mss04.sr01.tok04# sh int status
+
+is02.sr01.syd04#sh mac address-table
+is02.sr01.syd04#sh mac address-table ?
+is02.sr01.syd04#sh mac address-table interface eth33
+is05.sr01.syd04#sh int et4 status
+
+is02.sr01.syd04#config
+is02.sr01.syd04(config)#int et33
+is02.sr01.syd04(config-if-Et33)#description DL: compmlbsyd0401d-eth0
+is02.sr01.syd04(config-if-Et33)#exit
+is02.sr01.syd04(config)#write
+Copy completed successfully.
+is02.sr01.syd04(config)#exit
+
+
+
+To spin up a virtual box with cents : vagrant box add bento/centos-7.2
+Install chefdk: curl https://omnitruck.chef.io/install.sh | sudo bash -s -- -P chefdk -c stable -v 0.18.30
+
+To delete folder with all its contents/dir and files :  rm -R cleversafe-ansible-prod
+
+root@compmlbfra0401a:~# iptables -L -n | grep 10.208.163
+
+
+systemd-journald was consuming 7GB of ram and preventing kafka from starting
+I got it started again
+Checked basic system metrics.  Disk usage, RAM, CPU.  Only a little of RAM was available without kafka starting.  Kafka use around 6GB of RAM.
+Looking at top I could see systemd-journald was using 7GB so I restarted that service to free the ram
+
+Cat /proc/cpuinfo
+
+To find a file with a prefix such as woles-mbp:cleversafe-ansible wolejegede$ find . -name 'vagrant.yml'
+
+woles-mbp:devel wolejegede$ git clone ssh://git@stash.softlayer.local:7999/unixis/vlan_acl.git
+
+
+
+KRB5 Bitbucket Notes
+* Realm : default_realm
+* Admin principal : admin/admin
+* Admin PWD : password
+* Master PWD : password
+* /Users/wolejegede/devel/softlayer-chef/cookbooks/kerberos/spec/unit/recipes/defaul_spec.rb. ( realm = SOFTLAYER.LOCAL)
+* kerberos/test/integration/keytab/controls/keytab_spec.rb ( dokken)
+
+
+FRA05
+
+ojegede@oss-managedal0101:~$ ssh utilityfra0501
+[ojegede@utilityfra0501 ~]$ grep -i "is07" /etc/hosts
+
+
+To create a branch : git checkout master -b STORESHARE-188
+
+git branch
+git checkout master
+git pull
+git checkout STORESHARE-188
+git branch
+git merge master
+git status
+
+Moving entire file path/directory (cd into where you want it to be) mv /Users/wolejegede/devel/cleversafe-ansible-prod/cleversafe-ansible/envs/prod/iaas-compute-fra05-inSL ./
+woles-mbp:cleversafe-ansible wolejegede$ git status
+woles-mbp:cleversafe-ansible wolejegede$ git add envs/prod/iaas-compute-fra05-inSL/
+woles-mbp:cleversafe-ansible wolejegede$ git status
+woles-mbp:cleversafe-ansible wolejegede$ git reset HEAD utils/dev/vagrant/setup_dev_upgrade_seed.sh
+git commit -m "fra05"
+woles-mbp:cleversafe-ansible wolejegede$ git push
+
+Undo change
+wolejegede@Woles-MacBook-Pro cleversafe-ansible % git checkout envs/default/global_vars.yml
+Updated 1 path from the index
+Undo added change
+wolejegede@Woles-MacBook-Pro cleversafe-ansible % git reset envs/default/global_vars.yml
+Unstaged changes after reset:
+M	envs/default/global_vars.yml
+
+When you have wrong commit in your push
+git checkout master
+git pull
+git checkout STORSHARE-1917
+git merge master
+git push
+
+DELETION
+woles-mbp:cleversafe-ansible wolejegede$ git revert 0b9d5f177a829393ac993ac581d320d819f23de7
+woles-mbp:cleversafe-ansible wolejegede$ git branch -d STORSHARE-697-syd01-acl
+Deleted branch STORSHARE-697-syd01-acl (was 93a8e0878).
+
+woles-mbp:vlan_acl wolejegede$ git push -u origin --delete STORSHARE-697-syd01-acl
+To ssh://stash.softlayer.local:7999/unixis/vlan_acl.git
+ - [deleted]         STORSHARE-697-syd01-acl
+
+woles-mbp:all wolejegede$ ln -s ../../../../default/global_prod_vault.yml ./
+
+lrwxr-xr-x  1 wolejegede  staff     41 May  6 12:21 global_prod_vault.yml -> ../../../../default/global_prod_vault.yml
+lrwxr-xr-x  1 wolejegede  staff     35 May  6 12:22 global_vars.yml -> ../../../../default/global_vars.yml
+
+
+woles-mbp:cleversafe-ansible wolejegede$ git revert --help
+woles-mbp:cleversafe-ansible wolejegede$ git revert HEAD
+[STORSHARE-189-icinga e9d1aa07f] Revert "STORSHARE-189: Creating icinga monitoring-iaas-compute-tok02-inSL"
+ 2 files changed, 3 insertions(+), 41 deletions(-)
+ delete mode 100644 envs/prod/iaas-compute-tok02-inSL/seed/icinga.yml
+woles-mbp:cleversafe-ansible wolejegede$ git log
+commit e9d1aa07fe3acca3432d1863cb93ef5a2642203e (HEAD -> STORSHARE-189-icinga)
+Author: Oyewole-Jegede <you@example.com>
+Date:   Tue Jul 30 09:43:05 2019 -0500
+
+    Revert "STORSHARE-189: Creating icinga monitoring-iaas-compute-tok02-inSL"
+
+    This reverts commit 1b267f6079ea715d2917fcf93e41540be2b95c3f.
+
+
+
+woles-mbp:~ wolejegede$ ls ~/.ssh
+woles-mbp:.ssh wolejegede$ cat id_rsa
+woles-mbp:.ssh wolejegede$ cat id_rsa.pub
+cat ~/.ssh/id_rsa*
+ssh-add -L
+ssh-add
+git clone git@github.ibm.com:IaaS-Fabric/logmon-ansible.git
+git branch
+git checkout kafka-dal13-onSL
+git branch
+
+root@compmlbfra0501b:/opt/kafka# netstat -nlp |grep 9092
+root@compmlbfra0501b:/opt/kafka# netstat
+
+Network:
+dig xssjc0401c.softlayer.local
+ping xssjc0401c
+dig -x 172.27.194.123
+
+git stash
+Switch to master
+Git pull
+Cd into the file
+Vim into the file vim jjb-sjc04-iaas-compute-production-inSL
+ssh-add -l
+
+Testing connectivity
+$ nc -z -w5 my-cache-2b.z2vq55.001.usw2.cache.amazonaws.com 11211
+$ echo $?
+0
+
+
+Version:
+1. cat /etc/os-release lsb_release -a hostnamectl
+2. Type the following command to find Linux kernel version: uname -r
+
+URPs
+/opt/kafka/bin/kafka-topics.sh --zookeeper localhost:2181 --topic '.*' --describe --under-replicated-partitions|wc -l
+
+LOAD
+root@ossgmsdatadal1201c:~# uptime
+root@ossgmsdatadal1201c:~# w
+root@ossgmsdatadal1201c:~# top
+
+Checking ACLs/Iptables
+root@compmlbdal1001a:~# ipt
+root@compmlbdal1001a:~# iptables --list
+root@compmlbdal1001a:~# iptables --list -n
+
+wolejegede@woles-mbp devel % git diff --no-index fra0201a fra0201c
+diff --git a/fra0201a b/fra0201c
+index 8a88233..efd0d75 100644
+--- a/fra0201a
++++ b/fra0201c
+
+
+On the shared-services channel:
+We've been getting WARNING: 'rootDiskUsagecicd' alerts on osscontrollers (e.g. osscontrollerrgwdc0701, osscontrolerrgwdc0404, osscontrollerrgwdc0601, osscontrollersjc0302, ...).   The root disk usage is > 75%.  To resolve, I ssh to the controller and remove these directories from /home/deploy1720.  Common theme is the
+netscaler-update directory was just created.  What/who is creating this and can they clean up after themselves so we don't keep getting alerts?
+drwxr-xr-x  2 deploy1720 deploy1720  4096 Sep 30 14:03 netscaler-cluster
+drwxr-xr-x  7 deploy1720 deploy1720  4096 Feb 18 16:34 netscaler-update  <===
+6:38
+ssh to the controller
+cd /home/deploy1720
+rm -Rf netscaler-cluster
+rm -Rf netscaler-update
+df -vh    (to verify / disk usage is now below 75%)
+
+https://www.edureka.co/community/9425/how-can-i-delete-all-the-messages-from-a-kafka-topic

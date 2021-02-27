@@ -1,0 +1,502 @@
+root@osscontrollerdal0901:~# history
+    1  vset.py osscadal0909 netboot
+    2  ipmiinfo.py osscm
+    3  vstat.py osscadal0907b
+    4  cd /opt/vergil/config/
+    5  ls
+    6  vstat.py osscsdal0909p
+    7  cd
+    8  cd bom
+    9  ls
+   10  grep 0909p *
+   11  grep 0907b *
+   12  pwd
+   13  ls /home/dadavis/
+   14  ls -l /home/dadavis/
+   15  grep osscsdal0909p *
+   16  view dal09-vital.yml
+   17  grep 0907d /home/dadavis/dal09-vital.yml
+   18  grep 0909p /home/dadavis/dal09-vital.yml
+   19  grep 0909p dal09-vital.yml
+   20  ls
+   21  ls -l
+   22  ls -l
+   23  cp dal09-vital.yml.200828 dal09-vital.yml
+   24  ls -l
+   25  cat /home/dadavis/dal09-vital.yml >> dal09-vital.yml
+   26  vi dal09-vital.yml
+   27  cd /opt/vergil/config/
+   28  ls
+   29  vi inventory.yaml
+   30  vstat.py osscadal0907d
+   31  vset.py osscadal0907d netboot
+   32  vstat.py osscadal0909p
+   33  vstat.py osscsdal0909p
+   34  vset.py osscsdal0909p netboot
+   35  ipmiinfo.py osscsdal0909p
+   36  pwd
+   37  ls
+   38  view inventory.yaml
+   39  cd bom
+   40  grep dal0907a *
+   41  cd /opt/vergil/config/
+   42  grep dal0907a *
+   43  grep dal0907ab *
+   44  vi inventory.yaml
+   45  export TERM=vt100
+   46  grep dal09 *
+   47  grep dal0907 *
+   48  ls -l
+   49  vi inventory.yaml
+   50  ls -l
+   51  cd
+   52  cd bom
+   53  grep dal0907b *
+   54  cd /home/dadavis/
+   55  ls
+   56  view new-nodes.lst
+   57  vi new-nodes.lst
+   58  vstat.py osscsdal0907
+   59  vset.py osscsdal0907 netboot
+   60  vstat.py osscsdal0908
+   61  vset.py osscsdal0908 netboot
+   62  vset.py osscsdal0909 netboot
+   63  pwd
+   64  ls
+   65  grep osscs new-nodes.lst
+   66  grep osscs new-nodes.lst > osscs.lst
+   67  grep ossca new-nodes.lst > ossca.lst
+   68  cat ossca.lst
+   69  cat osscs.lst
+   70  grep -v osscs new-nodes.lst
+   71  grep -v osscs new-nodes.lst  | grep -v ossca
+   72  grep -v osscs new-nodes.lst  | grep -v ossca > nondp.lst
+   73  cat nondp.lst
+   74  for i in `cat nondp.lst`; do echo $i; done
+   75  for i in `cat nondp.lst`; do vstat.py  $i; done
+   76  for i in `cat nondp.lst`; do vset.py netboot  $i; done
+   77  for i in `cat nondp.lst`; do vset.py $i netboot; done
+   78  cat /etc/dnsmasq.conf
+   79  cat /etc/hosts.dnsmasq
+   80  ifconfig
+   81  grep -R 172.16.0.80 /etc/
+   82  dmidecode
+   83  ipmiinfo.py osscadal0901c
+   84  ipmitool -H 169.254.133.21 -I lanplus -U ADMIN -P KVqLGurFk7 power off
+   85  ipmitool -H 169.254.133.21 -I lanplus -U ADMIN -P KVqLGurFk7 power status
+   86  ipmitool -H 169.254.133.21 -I lanplus -U ADMIN -P KVqLGurFk7 power on
+   87  ipmitool -H 169.254.133.21 -I lanplus -U ADMIN -P KVqLGurFk7 power status
+   88  ipmitool -H 169.254.133.21 -I lanplus -U ADMIN -P KVqLGurFk7 sol activate
+   89  exit
+   90  ipmiinfo.py osscadal0903c
+   91  ipmitool -H 169.254.133.116 -I lanplus -U ADMIN -P UwRzNRq8Tw power off
+   92  ipmitool -H 169.254.133.116 -I lanplus -U ADMIN -P UwRzNRq8Tw power status
+   93  ipmitool -H 169.254.133.116 -I lanplus -U ADMIN -P UwRzNRq8Tw power status
+   94  root@osscontrollerdal0901:~# ipmitool -H 169.254.133.116 -I lanplus -U ADMIN -P UwRzNRq8Tw power off
+   95  ping osscadal0903c
+   96  ipmiinfo.py osscadal0903c
+   97  ipmitool -H 169.254.133.116 -I lanplus -U ADMIN -P UwRzNRq8Tw power status
+   98  exit
+   99  ipmiinfo.py osscsdal0907b
+  100  ipmitool -H 169.254.134.161 -I lanplus -U ADMIN -P FY9fBdTtel chassis power status
+  101  telnet osscsdal0907b
+  102  telnew osscsdal0907b
+  103  vstat.py osscadal0907
+  104  telnew osscadal0907a
+  105  vi /usr/local/bin/telnew
+  106  set -o vi
+  107  ls -l /usr/local/bin/telnew
+  108  chmod 700 /usr/local/bin/telnew
+  109  telnew osscadal0907a
+  110  telnew osscadal0907h
+  111  vstat.py osscsdal0907
+  112  telnew osscadal0907
+  113  vstat.py osscadal0907
+  114  vstat.py osscsdal0909
+  115  ipmiinfo.py osscsdal0909a
+  116  ipmitool -H 169.254.134.208 -I lanplus -U ADMIN -P gcYSdM9es8 chassis power status
+  117  ipmitool -H 169.254.134.208 -I lanplus -U ADMIN -P gcYSdM9es8 chassis power status
+  118  cd /opt/vergil/config/
+  119  ls -l
+  120  grep osscadal0907d inventory.yaml
+  121  grep osscsdal0909p inventory.yaml
+  122  vstat.py osscadal0907d
+  123  vstat.py osscsdal0909p
+  124  cd
+  125  pwd
+  126  cd bo
+  127  cd bom
+  128  ls
+  129  ls -l
+  130  cp dal09-vital.yml /home/dadavis
+  131  ls /home/dadavis/
+  132  ls -l
+  133  cd /home/dadavis/
+  134  ls -l
+  135  cd
+  136  cd bom
+  137  ls -l
+  138  pwd
+  139  ls -l /opt/vergil/config/inventory.yaml
+  140  pwd
+  141  ls
+  142  cd ..
+  143  pwd
+  144  cd /home/dadavis
+  145  ls
+  146  vi switch.list
+  147  mkdir dal09-exp2
+  148  mv switch.list dal09-exp2/
+  149  cd dal09-exp2
+  150  ls
+  151  switchgrab
+  152  apt-get install sshpass
+  153  switchgrab
+  154  pwd
+  155  ls;
+  156  vi switch.ips
+  157  for i in `cut -f1 " " switch.ips"
+  158  do
+  159  echo $i
+  160  done
+  161  for i in `cut -f1 " " switch.ips`; do echo $i; done
+  162  view /etc/host
+  163  vi /etc/hosts
+  164  cat switch.ips
+  165  vi /etc/hosts
+  166  pwd
+  167  ls;
+  168  sl
+  169  switchgrab
+  170  ls
+  171  ls /usr/local/bin/
+  172  portchkhost -d dal09 osscmdal0907m
+  173  cp /root/bom/dal09-vital.yml .
+  174  ls
+  175  ls -l
+  176  portchkhost -d dal09 osscmdal0907m
+  177  portchkhost -d dal09 osscsdal0907m
+  178  vstat.py osscmdal0907a
+  179  telnew osscadal0907f
+  180  ip a
+  181  pwd
+  182  grep c2f9 *
+  183  ls
+  184  view is35.sr01.dal09.show_mac.txt
+  185  switchgrab
+  186  portchkhost -d dal09 osscsdal0907a
+  187  telnew osscsdal0907a
+  188  apt-get install telnet
+  189  telnew osscsdal0907a
+  190  ipmiinfo.py osscsdal0907a
+  191  ipmitool -H 169.254.134.160 -I lanplus -U ADMIN -P D3YvwpchJ3 chassis power status
+  192  telnew osscsdal0907a
+  193  ipmitool -H 169.254.134.160 -I lanplus -U ADMIN -P D3YvwpchJ3 chassis power status
+  194  portchkhost -d dal09 osscsdal0907a
+  195  portchkhost -d dal09 osscsdal0907u
+  196  grep 6d58 *
+  197  ls
+  198  vi is37.sr01.dal09.show_mac.txt
+  199  portchkhost -d dal09 osscsdal0907a
+  200  portchkhost -d dal09 osscsdal0907u
+  201  grep ba83 *
+  202  grep 0cc4 *
+  203  portchkhost -d dal09 osscsdal0907a
+  204  vi is37.sr01.dal09.show_mac.txt
+  205  pingi.py osscmdal09
+  206  pingi.py osscadal0907
+  207  pingi.py osscadal0908
+  208  pingi.py osscadal0909
+  209  vstat.py osscsdal0907a
+  210  vset.py osscsdal0907a netboot
+  211  telnew osscsdal0907a
+  212  telnew osscsdal0907a
+  213  telnew osscsdal0907b
+  214  telnew osscsdal0907c
+  215  ipmiinfo.py osscsdal0907b
+  216  ipmitool -H 169.254.134.161 -I lanplus -U ADMIN -P FY9fBdTtel chassis power status
+  217  telnew osscsdal0907c
+  218  pingi.py osscadal0907
+  219  pingi.py osscadal0908
+  220  pingi.py osscadal0909
+  221  pingi.py osscsdal0907
+  222  pingm.py osscsdal0907
+  223  set -o vi
+  224  for i in {a..g}; do portchkhost -d dal09 osscsdal0907$i; done
+  225  for i in {a..g}; do portchkhost -d dal09 osscsdal0907$i; done > r298-portchk.lst
+  226  for i in {a..f}; do portchkhost -d dal09 osscadal0907$i; done > r298-portchk.lst
+  227  for i in {a..f}; do portchkhost -d dal09 osscadal0907$i; done > r298-ca-portchk.lst
+  228  for i in {a..f}; do portchkhost -d dal09 osscsdal0907$i; done > r298-cs-portchk.lst
+  229  for i in {a..h}; do portchkhost -d dal09 osscsdal0907$i; done
+  230  vi r298-ca-portchk.lst
+  231  vi r298-cs-portchk.lst
+  232  pwd
+  233  switchgrab
+  234  for i in {h..m}; do portchkhost -d dal09 osscsdal0907$i; done > r299-cs-portchk.lst
+  235  for i in {g..h}; do portchkhost -d dal09 osscadal0907$i; done > r299-ca-portchk.lst
+  236  view r299-ca-portchk.lst
+  237  view r299-cs-portchk.lst
+  238  pingi.py osscadal0909
+  239  pingi.py osscadal0907
+  240  ipmiinfo.py osscadal0907
+  241  vset.py
+  242  ipipmitool -H 169.254.134.142 -I lanplus -U ADMIN -P wZ6ruR96nz chassis power status
+  243  ipmitool -H 169.254.134.142 -I lanplus -U ADMIN -P wZ6ruR96nz chassis power status
+  244  pwd
+  245  pwd
+  246  view r299-ca-portchk.lst
+  247  for i in {g..h}; do portchkhost -d dal09 osscadal0907$i; done > r299-ca-portchk.lst
+  248  for i in {h..m}; do portchkhost -d dal09 osscsdal0907$i; done > r299-cs-portchk.lst
+  249  cat r299-ca-portchk.lst
+  250  cat r299-cs-portchk.lst
+  251  view r299-cs-portchk.lst
+  252  cat r299-ca-portchk.lst
+  253  vset.py osscsdal0907g pxeboot
+  254  vset.py osscsdal0907g osinstall
+  255  vset.py osscsdal0907h osinstall
+  256  vset.py osscsdal0907h netboot
+  257  vset.py osscsdal0907g netboot
+  258  for i in {g..h}; do portchkhost -d dal09 osscadal0907$i; done > r299-ca-portchk.lst
+  259  switchgrab
+  260  for i in {g}; do portchkhost -d dal09 osscadal0907$i; done > r299-ca-portchk.lst
+  261  cat r299-ca-portchk.lst
+  262  for i in {g}; do portchkhost -d dal09 osscadal0907$i; done
+  263  portchkhost -d dal09 osscadal0907g
+  264  telnew osscadal0907g
+  265  telnet 172.16.253.100
+  266  telnew osscadal0907a
+  267  telnew osscadal0907b
+  268  telnew osscadal0907c
+  269  telnew osscadal0907d
+  270  telnew osscadal0907e
+  271  telnew osscadal0907f
+  272  telnew osscadal0907g
+  273  ip a
+  274  ip r
+  275  telnew osscsdal0907a
+  276  telnew osscsdal0907b
+  277  telnew osscmdal0907a
+  278  portchkhost -d dal09 osscadal0707b
+  279  ls
+  280  portchkhost -d dal09 osscadal0907b
+  281  telnew osscadal0907b
+  282  telnew osscadal0907b
+  283  telnew osscadal0907b
+  284  telnew osscadal0907a
+  285  portchkhost -d dal09 osscadal0907a
+  286  telnew osscadal0907c
+  287  portchkhost -d dal09 osscadal0907c
+  288  switchgrab
+  289  switchgrab
+  290  portchkhost -d dal09 osscadal0907c
+  291  portchkhost -d dal09 osscadal0907d
+  292  telnet osscadal0907c
+  293  telnew osscadal0907c
+  294  telnew osscadal0907d
+  295  switchgrab
+  296  switchgrab
+  297  portchkhost -d dal09 osscadal0907c
+  298  telnew osscadal0907e
+  299  telnew osscadal0907f
+  300  telnew osscadal0907g
+  301  telnew osscadal0907h
+  302  portchkhost -d dal09 osscadal0907e
+  303  portchkhost -d dal09 osscadal0907f
+  304  telnew osscsdal0907o
+  305  telnew osscsdal0907r
+  306  telnew osscsdal0907t
+  307  telnew osscsdal0907q
+  308  telnew osscsdal0907u
+  309  telnew osscsdal0907p
+  310  telnew osscsdal0907
+  311  portchkhost -d dal09 osscadal0907b
+  312  portchkhost -d dal09 osscadal0907a
+  313  portchkhost -d dal09 osscadal0907b
+  314  portchkhost -d dal09 osscadal0907a
+  315  portchkhost -d dal09 osscadal0907a
+  316  vstat.py ossca
+  317  tail -f /var/log/messages
+  318  ps
+  319  vstat.py osscs
+  320  pingi.py osscadal0907
+  321  pingi.py osscadal0908
+  322  pingi.py osscadal0909
+  323  pwd
+  324  cd /home/davisd
+  325  cd /home/dadavis/
+  326  ls
+  327  cd dal09-exp2/
+  328  ls
+  329  /switchgrab
+  330  set -o vi
+  331  /switchgrab
+  332  /switchgrab
+  333  set -o vi
+  334  for i in {a..h}; do portchkhost -d dal09 osscadal0907$i; done
+  335  telnew osscadal0907h
+  336  telnew osscadal0907g
+  337  telnew osscsdal0907n
+  338  telnew osscsdal0907h
+  339  telnew osscsdal0907i
+  340  telnew osscsdal0907j
+  341  telnew osscsdal0907k
+  342  telnew osscsdal0907l
+  343  telnew osscsdal0907m
+  344  telnew osscsdal0907n
+  345  telnew osscadal0907h
+  346  telnew osscadal0907g
+  347  ipmiinfo.py ossca0907h
+  348  ipmiinfo.py ossca0907g
+  349  ipmiinfo.py osscadal0907g
+  350  ipmiinfo.py osscadal0907h
+  351  ipmitool -H 169.254.134.143 -I lanplus -U ADMIN -P TS3Q9h89fc chassis power status
+  352  ipmitool -H 169.254.134.142 -I lanplus -U ADMIN -P wZ6ruR96nz chassis power status
+  353  cd /opt/vergil/config/
+  354  vi inventory.yaml
+  355  export TERM=vt100
+  356  vi inventory.yaml
+  357  vi inventory.yaml
+  358  cat /var/lib/misc/dnsmasq.leases
+  359  cat /var/lib/misc/dnsmasq.leases
+  360  grep 49:39  /var/lib/misc/dnsmasq.leases
+  361  grep 0d:a4  /var/lib/misc/dnsmasq.leases
+  362  ls /var/lib/misc/
+  363  vstat osscm
+  364  vstat.py  osscm
+  365  df -vh
+  366  ipconfig
+  367  ip as
+  368  ip a s
+  369  df -h
+  370  ip r s
+  371  free -h
+  372  pvdisplay
+  373  cat /var/lib/misc/dnsmasq.leases
+  374  for IPADDR in `cat /var/lib/misc/dnsmasq.leases | cut -d " " -f 3`; do telnet $IPADDR; done
+  375  telnew osscsdal0907h
+  376  service vergil restart
+  377  service dnsmasq restart
+  378  service nginx restart
+  379  telnew osscsdal0907h
+  380  xit
+  381   telnew osscadal0907b
+  382   telnew osscadal0907b
+  383   telnew osscadal0907b
+  384   telnew osscadal0907b
+  385   telnew osscadal0907b
+  386   telnew osscadal0907b
+  387   telnew osscadal0907b
+  388  vstat.py osscsdal0907
+  389  cat /var/lib/misc/dnsmasq.leases
+  390  pingi.py osscsdal0907
+  391  ifconfig
+  392  vim /etc/network/interfaces
+  393  ifup eth2:0
+  394  vim /etc/network/interfaces
+  395  ifdown eth2
+  396  ifdown eth2:0
+  397  ifdown eth2
+  398  ifconfig eth2 down
+  399  ifconfig eth2:0 down
+  400  ifconfig eth2 up
+  401  ifup eth2
+  402  ifup eth2:0
+  403  ifconfig
+  404  pingi.py osscsdal0907
+  405  pingi.py osscsdal0908
+  406  pingi.py osscsdal0909
+  407  pingi.py osscsdal0907
+  408  for NODE in `pingi.py osscsdal0907 |grep softlayer |cut -d "."
+  409  for NODE in `pingi.py osscsdal0907 |grep softlayer |cut -d "." -f 1`; do telnew $NODE; done
+  410  for NODE in `pingi.py osscsdal0908 |grep softlayer |cut -d "." -f 1`; do echo $NODE; telnew $NODE; done
+  411  fdisk -l
+  412  df -h
+  413  fdisk /dev/xvda
+  414  who
+  415  cd /home/deploy1720/
+  416  ls
+  417  ls -l
+  418  cd netscaler-update/
+  419  ls
+  420  ls -l
+  421  ls
+  422  rm 1*
+  423  rm -r 1*
+  424  df
+  425  cd ..
+  426  set -o vi
+  427  cd /home/dadavis/
+  428  cd dal09-exp2/
+  429  ls
+  430  /switchgrab
+  431  switchgrab
+  432  /ifor
+  433  set -o vi
+  434  for NODE in `pingi.py osscsdal0907 |grep softlayer |cut -d "." -f 1`; do echo $NODE; telnew $NODE; done
+  435  fdisk -l
+  436  who
+  437  df -vh
+  438  fdisk -l
+  439  ls -la
+  440  cat /etc/osscontroller/
+  441  cd /etc/osscontroller/
+  442  ls
+  443  cat control.pub
+  444  cd
+  445  cat /etc/osscontroller/control
+  446  less syslog
+  447  less var/log/syslog
+  448  df -h
+  449  ls /home
+  450  du -sh /home/
+  451  du -sh /tmp
+  452  du -sh /home/*
+  453  fdisk -l
+  454  dmesg
+  455  fdisk -l
+  456  who
+  457  lsof |grep home
+  458  parted /dev/xvdb
+  459  parted -a optimal /dev/xvdb mkpart 0% 100%
+  460  parted -a optimal /dev/xvdb mkpart primary 0% 100%
+  461  partprobe
+  462  who
+  463  mkdir /home2
+  464  mount /dev/xvdb1 /home2
+  465  mount
+  466  mount |grep home
+  467  fdisk -l
+  468  mkfs.ext3 /dev/xvdb1
+  469  who
+  470  w
+  471  mount /dev/xvdb1 /home2
+  472  lsof |grep home
+  473  w
+  474  w
+  475  kill 1579
+  476  kill 1570
+  477  who
+  478  cp -avr /home/* /home2/
+  479  who
+  480  lsod |grep home
+  481  lsof |grep home
+  482  umount /home
+  483  cd /home
+  484  ls
+  485  du -sh
+  486  cd ..
+  487  du -sh /home/deploy1720/*
+  488  rmm -Rf /home/deploy1720/mil_ss
+  489  rm -Rf /home/deploy1720/mil_ss
+  490  rm -Rf /home/deploy1720/sjc_ss
+  491  rm -Rf /home/deploy1720/sng_ss/
+  492  rm -Rf /home/deploy1720/tor_ss
+  493  df -h
+  494  du -sh /home
+  495  du -sh /home/*
+  496  umount /home2
+  497  mount /dev/xvdb1 /home
+  498  su - deploy1720
+  499  exit
+  500  history
+root@osscontrollerdal0901:~#

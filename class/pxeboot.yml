@@ -1,0 +1,272 @@
+root@compute-controllerpar0501c:~# history
+    1  vi /etc/apt/apt.conf
+    2  ping google.com
+    3  vi /etc/network/interfaces
+    4  ifup eth0
+    5  ifup eth1
+    6  ifup eth2
+    7  ifup eth1:0
+    8  ping google.com
+    9  ping 172.16.0.81
+   10  ping 172.28.114.20
+   11  ping 172.28.114.21
+   12  ping 172.16.0.44
+   13  apt-get update
+   14  vi /etc/apt/apt.conf
+   15  apt-get update
+   16  ip r s
+   17  cat /etc/apt/apt.conf
+   18  vi /etc/apt/sources.list
+   19  q
+   20  ip r s
+   21  ip link show
+   22  vi /etc/apt/apt.conf
+   23  vi /etc/apt/sources.list
+   24  vi /etc/network/interfaces
+   25  ifup eth1
+   26  ip a s eth1
+   27  ip r s
+   28  cat /etc/network/interfaces
+   29  vi /etc/network/interfaces
+   30  ifdown eth1
+   31  ip route flush dev eth0
+   32  ip route flush dev eth1
+   33  ifup eth1
+   34  ip a s eth1
+   35  vi /etc/ssh/sshd_config
+   36  systemctl restart ssh
+   37  sudo -i
+   38  ps auxwww | grep '/tmp'
+   39  kill 4963
+   40  ps auxwww | grep '/tmp'
+   41  ps auxwww | grep '/tmp'
+   42  kill -9 4963
+   43  ps auxwww | grep '/tmp'
+   44  kill -SIGHUP 19256
+   45  ps auxwww | grep '/tmp'
+   46  ps auxwww | grep '/tmp'
+   47  kill -9 19209
+   48  kill -9 19256
+   49  vi /tmp/prep_vm.sh
+   50  /tmp/prep_vm.sh
+   51  chmod u+x /tmp/prep_vm.sh
+   52  /tmp/prep_vm.sh
+   53  apt-get update
+   54  cat /etc/os-release
+   55  history
+   56  vi /tmp/prep_vm.sh
+   57  cat /etc/os-release
+   58  apt-get update
+   59  apt-get upgrade
+   60  apt-get install python-dev python-setuptools python-pip git gcc build-essential libssl-dev libffi-dev ipmitool sudo libltdl7 systemd-sysv
+   61  journalctl -xe -u ipmievd
+   62  journalctl -xe -u ipmievd.service
+   63  journalctl -xe -u ipmi
+   64  journalctl -xe  ipmievd.service
+   65  pip install -U pip==9.0.3 --index-url https://pypi.python.org/simple/
+   66  hash -r
+   67  pip install --upgrade distribute setuptools
+   68  pip install pyyaml requests httplib2 ansible==2.1.0.0 virtualenv
+   69  pip uninstall virtualenv ; pip install virtualenv; pip uninstall requests ; pip install requests ; chmod -R a+rX /usr/lib/python*/dist-packages/ ; chmod -R a+rX /usr/local/lib/python*/dist-packages/ ; hash -r
+   70  apt-get remove resolvconf
+   71  lsmod | grep -i ipmi
+   72  apt-get install python-dev python-setuptools python-pip git gcc build-essential libssl-dev libffi-dev ipmitool sudo libltdl7 systemd-sysv
+   73  journalctl -xe -u ipmievd
+   74  lsmod | grep -i ipmi
+   75  apt-get install python-dev python-setuptools python-pip git gcc build-essential libssl-dev libffi-dev ipmitool sudo libltdl7 systemd-sysv
+   76  ping 172.28.96.240
+   77  ping 172.28.114.20
+   78  ls /home/
+   79  adduser deploy1720
+   80  usermod -a -G sudo deploy1720
+   81  mkdir /home/deploy1720/.ssh
+   82  vi key
+   83  chmod 600 key
+   84  ssh-i key deploy172@172.28.96.240
+   85  service ssh restart
+   86  service ssh status
+   87  ssh-i key deploy172@172.28.96.240
+   88  ssh-i key deploy1720@172.28.96.240
+   89  vi /etc/ssh/sshd_config
+   90  visudo
+   91  cat /etc/passwd
+   92  ls /home/deploy1720/
+   93  reboot
+   94  vi /home/deploy1720/.ssh/authorized_keys
+   95  chown -R deploy1720:deploy1720 /home/deploy1720/.ssh
+   96  chmod 700 /home/deploy1720/.ssh
+   97  ssh-i key deploy1720@172.28.96.240
+   98  ssh -i ~/.ssh/deploy1720 deploy1720@172.28.96.240
+   99  cat /home/deploy1720/.ssh/authorized_keys
+  100  vi key
+  101  su deploy1720
+  102  usermod -a -G sudo deploy1720
+  103  ifconfig
+  104  lsb_release -r
+  105  exit
+  106  hostname -f
+  107  hostname -f
+  108  ifconfig
+  109  ping
+  110  hostname -f
+  111  vi /etc/ssh/sshd_config
+  112  wq!
+  113  :wq!
+  114  vi /etc/ssh/sshd_config
+  115  ssh service restart
+  116  ssh service status
+  117  cat /etc/network/interfaces
+  118  apt-get install ssh
+  119  ssh service restart
+  120  vi /etc/ssh/sshd_config
+  121  visudo
+  122  ssh service restart
+  123  apt-get update
+  124  apt-get upgrade
+  125  reboot
+  126  cat /opt/vergil/resources/installscripts/views/run_list.sh.erb
+  127  /opt/vergil/bin/vergil ipxeboot status
+  128  vi /opt/vergil/config/inventory.yaml
+  129  /opt/vergil/bin/vergil ipxeboot set ae:1f:6b:0f:4c:d8 osinstall
+  130  /opt/vergil/bin/vergil ipxeboot set ae:1f:6b:0f:4a:e0 osinstall
+  131  /opt/vergil/bin/vergil ipxeboot set ae:1f:6b:0f:4c:88 osinstall
+  132  /opt/vergil/bin/vergil ipxeboot set ae:1f:6b:0f:4c:8c osinstall
+  133  /opt/vergil/bin/vergil ipxeboot set ae:1f:6b:0f:46:30 osinstall
+  134  /opt/vergil/bin/vergil ipxeboot status
+  135  /opt/vergil/bin/vergil ipxeboot set ac:1f:6b:0f:4c:d8 osinstall
+  136  /opt/vergil/bin/vergil ipxeboot set ac:1f:6b:0f:4a:e0 osinstall
+  137  /opt/vergil/bin/vergil ipxeboot set ac:1f:6b:0f:4c:88 osinstall
+  138  /opt/vergil/bin/vergil ipxeboot set ac:1f:6b:0f:4c:8c osinstall
+  139  /opt/vergil/bin/vergil ipxeboot set ac:1f:6b:0f:46:30 osinstall
+  140  /opt/vergil/bin/vergil ipxeboot status
+  141  vi /etc/apt/sources.list
+  142  /opt/vergil/bin/vergil ipxeboot status
+  143  /opt/vergil/bin/vergil ipxeboot set ac:1f:6b:0f:4c:8c osinstall
+  144  /opt/vergil/bin/vergil ipxeboot status
+  145  /opt/vergil/bin/vergil ipxeboot status
+  146  ssh 172.28.96.243
+  147  su deploy1720
+  148  /opt/vergil/bin/vergil ipxeboot set ac:1f:6b:0f:4c:8c netboot
+  149  /opt/vergil/bin/vergil ipxeboot status
+  150  /opt/vergil/bin/vergil ipxeboot set ac:1f:6b:0f:4c:8c osinstall
+  151  /opt/vergil/bin/vergil ipxeboot status
+  152  storcli /c0 show
+  153  ssh 172.28.96.245
+  154  su deploy1720
+  155  /opt/vergil/bin/vergil ipxeboot status
+  156  exit
+  157  cat /etc/network/interfaces
+  158  apt-get update
+  159  apt-get upgrade
+  160  apt-get install ssh
+  161  service restart ssh
+  162  service ssh restart
+  163  reboot
+  164  cat /etc/network/interfaces
+  165  cat /etc/resolv.conf
+  166  cat /etc/apt/apt.conf
+  167  history
+  168  cat /tmp/prep_vm.sh
+  169  ps auxwww | grep '/tmp'
+  170  cd /tmp/
+  171  ls
+  172  ls -la
+  173  cd ..
+  174  ls
+  175  vi /etc/apt/apt.conf
+  176  cat /etc/apt/apt.conf
+  177  ip a s
+  178  ip r s
+  179  vi /etc/ssh/sshd_config
+  180  vi /etc/ssh/sshd_config
+  181  vi /etc/ssh/sshd_config
+  182  visudo
+  183  service ssh restart
+  184  vi /etc/ssh/sshd_config
+  185  service ssh restart
+  186  ip r s
+  187  vi /etc/ssh/sshd_config
+  188  service ssh restart
+  189  reboot
+  190  su deploy1720
+  191  vi /etc/ssh/sshd_config
+  192  visudo
+  193  vi /etc/apt/apt.conf
+  194  cd /etc/apt/
+  195  ls
+  196  cat apt.conf
+  197  cd
+  198  /opt/vergil/bin/vergil ipxeboot status
+  199  ip r s
+  200  ip a s
+  201  /opt/vergil/bin/vergil ipxeboot set ae:1f:6b:0f:4c:d8 osinstall
+  202  /opt/vergil/bin/vergil ipxeboot set ae:1f:6b:0f:4a:e0 osinstall
+  203  /opt/vergil/bin/vergil ipxeboot set ac:1f:6b:0f:4c:d8 osinstall
+  204  /opt/vergil/bin/vergil ipxeboot set ac:1f:6b:0f:4a:e0 osinstall
+  205  /opt/vergil/bin/vergil ipxeboot set ac:1f:6b:0f:4c:88 osinstall
+  206  /opt/vergil/bin/vergil ipxeboot set ac:1f:6b:0f:46:30 osinstall
+  207  /opt/vergil/bin/vergil ipxeboot set ac:1f:6b:0f:46:30 osinstall
+  208  /opt/vergil/bin/vergil ipxeboot status
+  209  /opt/vergil/bin/vergil ipxeboot set ac:1f:6b:0f:4c:8c osinstall
+  210  /opt/vergil/bin/vergil ipxeboot status
+  211  /opt/vergil/bin/vergil ipxeboot status
+  212  /opt/vergil/bin/vergil ipxeboot status
+  213  /opt/vergil/bin/vergil ipxeboot status
+  214  /opt/vergil/bin/vergil ipxeboot set ac:1f:6b:0f:4a:e0 osinstall
+  215  /opt/vergil/bin/vergil ipxeboot set ac:1f:6b:0f:4c:d8 osinstall
+  216  /opt/vergil/bin/vergil ipxeboot set ac:1f:6b:0f:4c:88 osinstall
+  217  /opt/vergil/bin/vergil ipxeboot set ac:1f:6b:0f:4c:8c osinstall
+  218  /opt/vergil/bin/vergil ipxeboot set ac:1f:6b:0f:4c:8c osinstall
+  219  /opt/vergil/bin/vergil ipxeboot set ac:1f:6b:0f:4c:88 osinstall
+  220  /opt/vergil/bin/vergil ipxeboot set ac:1f:6b:0f:46:30 osinstall
+  221  /opt/vergil/bin/vergil ipxeboot set ac:1f:6b:0f:4c:8c netboot
+  222  /opt/vergil/bin/vergil ipxeboot set ac:1f:6b:0f:4c:8c osinstall
+  223  /opt/vergil/bin/vergil ipxeboot status
+  224  /opt/vergil/bin/vergil ipxeboot set ac:1f:6b:0f:4c:8c osinstall
+  225  /opt/vergil/bin/vergil ipxeboot status
+  226  ls
+  227  ls /var/log/
+  228  grep -r "ac:1f:6b:0f:4c:88" /var/log/syslog
+  229  grep -r "ac:1f:6b:0f:4c:88" /var/log/nginx/
+  230  grep -r "172.16.250.242" /var/log/nginx/
+  231  grep -r "ac:1f:6b:0f:4c:8c" /var/log/syslog
+  232  grep -r "ac:1f:6b:0f:4c:8c" /var/log/nginx/
+  233  /opt/vergil/bin/vergil ipxeboot status
+  234  /opt/vergil/bin/vergil ipxeboot set ac:1f:6b:0f:4c:88 osinstall
+  235  ipmitool -I lanplus -H 169.254.96.244 -U ADMIN -a sol activate
+  236  /opt/vergil/bin/vergil ipxeboot set ac:1f:6b:0f:4c:8c osinstall
+  237  /opt/vergil/bin/vergil ipxeboot status
+  238  /opt/vergil/bin/vergil ipxeboot status
+  239  su deploy1720
+  240  /opt/vergil/bin/vergil ipxeboot status
+  241  /opt/vergil/bin/vergil ipxeboot set ac:1f:6b:0f:4c:88 osinstall
+  242  /opt/vergil/bin/vergil ipxeboot status
+  243  su deploy1720
+  244  /opt/vergil/bin/vergil ipxeboot status
+  245  su deploy1720
+  246  /opt/vergil/bin/vergil ipxeboot status
+  247  /opt/vergil/bin/vergil ipxeboot set ac:1f:6b:0f:4c:88 osinstall
+  248  su deploy1720
+  249  su deploy1720
+  250  /opt/vergil/bin/vergil ipxeboot set ac:1f:6b:0f:4c:8c osinstall
+  251  /opt/vergil/bin/vergil ipxeboot set ac:1f:6b:0f:4c:8c osinstall
+  252  su deploy1720
+  253  /opt/vergil/bin/vergil ipxeboot status
+  254  /opt/vergil/bin/vergil ipxeboot set ac:1f:6b:0f:46:30 osinstall
+  255  /opt/vergil/bin/vergil ipxeboot set ac:1f:6b:0f:46:30 osinstall
+  256  /opt/vergil/bin/vergil ipxeboot set ac:1f:6b:0f:4c:d8 osinstall
+  257  /opt/vergil/bin/vergil ipxeboot set ac:1f:6b:0f:4c:d8 osinstall
+  258  /opt/vergil/bin/vergil ipxeboot set ac:1f:6b:0f:4c:d8 osinstall
+  259  su deploy1720
+  260  su deploy1720
+  261  /opt/vergil/bin/vergil ipxeboot status
+  262  /opt/vergil/bin/vergil ipxeboot set ac:1f:6b:0f:4c:d8 osinstall
+  263  /opt/vergil/bin/vergil ipxeboot set ac:1f:6b:0f:4a:e0 osinstall
+  264  /opt/vergil/bin/vergil ipxeboot status
+  265  su deploy1720
+  266  apt install storcli
+  267  /opt/vergil/bin/vergil ipxeboot status
+  268  apt remove storcli
+  269  su deploy1720
+  270  history
+root@compute-controllerpar0501c:~#
