@@ -1,0 +1,37 @@
+sudo to jump
+dpkg-query -l |grep libssh2\-1
+apt-cache policy libssh2-1
+apt-get install libssh2-1=1.7.0-1+deb9u1
+
+
+ipmitool -H 169.254.64.241 -I lanplus -U ADMIN -P AmK2J6QHbu chassis status
+ipmitool -H 169.254.192.241 -I lanplus -U ADMIN -P xdmCWV6T6 chassis status
+
+
+/opt/vergil/bin/vergil ipxeboot set 0c:c4:7a:a4:95:b2 osinstall
+/opt/vergil/bin/vergil ipxeboot set 0c:c4:7a:a4:52:64 osinstall
+/opt/vergil/bin/vergil ipxeboot set 0c:c4:7a:a4:52:8c osinstall
+/opt/vergil/bin/vergil ipxeboot set 0c:c4:7a:d3:39:7e osinstall
+/opt/vergil/bin/vergil ipxeboot set 0c:c4:7a:d3:35:66 osinstall
+
+ipmitool -H 169.254.0.241 -I lanplus -U ADMIN -P Kmt6HJ5Yar chassis power status
+ipmitool -H 169.254.0.242 -I lanplus -U ADMIN -P KJc2gb4lfv chassis power status
+ipmitool -H 169.254.0.243 -I lanplus -U ADMIN -P Cv9LdMjMZr chassis power status
+ipmitool -H 169.254.0.244 -I lanplus -U ADMIN -P S46l85eUYr chassis power status
+ipmitool -H 169.254.0.245 -I lanplus -U ADMIN -P PXPSu5pdqE chassis power status
+
+
+ipmitool -H 169.254.192.241 -I lanplus -U ADMIN -P RcY9qYlFdD chassis power reset
+ipmitool -H 169.254.192.242 -I lanplus -U ADMIN -P RSSuYjLsu4 chassis power reset
+ipmitool -H 169.254.192.243 -I lanplus -U ADMIN -P MbZ9teW6q8 chassis power reset
+ipmitool -H 169.254.192.244 -I lanplus -U ADMIN -P E9hk6ql979 chassis power reset
+ipmitool -H 169.254.192.245 -I lanplus -U ADMIN -P Dz59Rwyzn4 chassis power reset
+
+
+ojegede@compute-controllerdal1001c:~$ sudo su -
+root@compute-controllerdal1001c:~# ssh compipesatdal1001a
+root@compipesatdal1001a:~# adduser osscontrol
+root@compipesatdal1001a:~# usermod -a -G sudo osscontrol
+root@compipesatdal1001a:~# mkdir /home/osscontrol/.ssh
+root@compipesatdal1001a:~# vi key
+root@compipesatdal1001a:~# vi /home/osscontrol/.ssh/authorized_keys

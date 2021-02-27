@@ -1,0 +1,207 @@
+root@compipesatwdc0401a:~# history
+    1  read -d '' mirrors <<"EOF"
+    2  deb http://mirrors.softlayer.local/debian wheezy main non-free contrib
+    3  deb-src http://mirrors.softlayer.local/debian wheezy main non-free contrib
+    4  deb http://mirrors.softlayer.local/debian wheezy-updates main contrib non-free
+    5  deb-src http://mirrors.softlayer.local/debian wheezy-updates main contrib non-free
+    6  deb http://mirrors.softlayer.local/debian-security wheezy/updates main contrib non-free
+    7  deb-src http://mirrors.softlayer.local/debian-security wheezy/updates main contrib non-free
+    8  EOF
+    9  echo "${mirrors}" >/etc/apt/sources.list
+   10  vi /etc/apt/sources.list
+   11  vi /etc/network/interfaces
+   12  ifdown eth0
+   13  ifup eth0
+   14  ping 172.20.194.1
+   15  apt-get update
+   16  apt-get upgrade
+   17  vi /etc/apt/sources.list
+   18  apt-get dist-upgrade
+   19  apt-get update
+   20  apt-get upgrade
+   21  reboot
+   22  cat /etc/os-release
+   23  vi /etc/apt/sources.list
+   24  apt-get dist-upgrade
+   25  apt-get update
+   26  apt-get upgrade
+   27  reboot
+   28  cat /etc/os-release
+   29  apt-get update
+   30  apt-get upgrade
+   31  apt-get dist-upgrade
+   32  apt-get update
+   33  apt-get upgrade
+   34  apt --fix-broken install
+   35  cat /etc/os-release
+   36  reboot
+   37  vi /etc/network/interfaces
+   38  ifup eth0
+   39  ifup eth01
+   40  ifup eth1
+   41  ifup eth2
+   42  vi /etc/network/interfaces
+   43  ip r s
+   44  ip a s
+   45  netstat -nr
+   46  ifup eth0
+   47  service networking restart
+   48  vi /etc/network/interfaces
+   49  vi /etc/resolv.conf
+   50  ifup eth0
+   51  ifdown eth0
+   52  ip a flush dev eth0
+   53  ip a flush dev eth1
+   54  vi /etc/network/interfaces
+   55  ifup eth0
+   56  ifup eth1
+   57  ifup eth2
+   58  wole
+   59  vi /etc/network/interfaces
+   60  ifup eth0
+   61  ifup eth1
+   62  ifup eth2
+   63  ifup eth0
+   64  ifup eth0
+   65  ifup eth1
+   66  ifup eth2
+   67  ip r s
+   68  ifdown eth1
+   69  ifdown eth2
+   70  vi /etc/network/interfaces
+   71  ifup eth1
+   72  ifup eth2
+   73  ifup eth0
+   74  vi /etc/network/interfaces
+   75  ifup eth1
+   76  ifup eth2
+   77  ip r s
+   78  netstat -nr
+   79  ping 172.17.82.20
+   80  apt-get update
+   81  apt-get upgrade
+   82  apt-get install ssh
+   83  vi /etc/ssh/sshd_config
+   84  service ssh restart
+   85  vi /etc/hostname
+   86  reboot
+   87  apt-get install python-dev python-setuptools python-pip git gcc build-essential libssl-dev libffi-dev ipmitool sudo libltdl7 systemd-sysv
+   88  pip install -U pip==9.0.3 --index-url https://pypi.python.org/simple/
+   89  hash -r
+   90  pip install --upgrade distribute setuptools
+   91  pip install pyyaml requests httplib2 ansible==2.1.0.0 virtualenv
+   92  pip uninstall virtualenv ; pip install virtualenv; pip uninstall requests ; pip install requests ; chmod -R a+rX /usr/lib/python*/dist-packages/ ; chmod -R a+rX /usr/local/lib/python*/dist-packages/ ; hash -r
+   93  apt-get remove resolvconf
+   94  visudo
+   95  cat /etc/passwd
+   96  adduser osscontrol
+   97  usermod -a -G sudo osscontrol
+   98  mkdir /home/osscontrol/.ssh
+   99  vi key
+  100  vi /home/osscontrol/.ssh/authorized_keys
+  101  chown -R osscontrol:osscontrol /home/osscontrol/.ssh
+  102  chmod 700 /home/osscontrol/.ssh
+  103  vi /home/osscontrol/.ssh/authorized_keys
+  104  chown -R osscontrol:osscontrol /home/osscontrol/.ssh
+  105  chmod 700 /home/osscontrol/.ssh
+  106  exit
+  107  visudo
+  108  visudo
+  109  visudo
+  110  exit
+  111  vi /etc/ssh/sshd_config
+  112  systemctl restart ssh
+  113  service ssh restart
+  114  reboot
+  115  cat /etc/passwd
+  116  vi key
+  117  vi /etc/ssh/
+  118  ls /etc/ssh/
+  119  ls /home/osscontrol/
+  120  ls
+  121  ls /home/osscontrol/.ssh/
+  122  cat /home/osscontrol/.ssh/authorized_keys
+  123  reboot
+  124  nestat
+  125  netstat -nr
+  126  ip a s
+  127   ip r s
+  128  vi /etc/hostname
+  129  cd /tmp/
+  130  ls
+  131  ls -la
+  132  cd
+  133  systemctl status time-sync.target
+  134  exit
+  135  visudo
+  136  vi /home/osscontrol/
+  137  service ssh restart
+  138  exit
+  139  vi /etc/network/interfaces
+  140  cd /etc/ssh/
+  141  ls
+  142  cd
+  143  cat /home/osscontrol/.ssh/authorized_keys
+  144  ping 10.184.23.144
+  145  exit
+  146  ip route
+  147  ping 10.184.23.144
+  148  ssh root@compipesatwdc0401a:~# ping 10.184.23.144
+  149  PING 10.184.23.144 (10.184.23.144) 56(84) bytes of data.
+  150  64 bytes from 10.184.23.144: icmp_req=1 ttl=55 time=29.2 ms
+  151  64 bytes from 10.184.23.144: icmp_req=2 ttl=55 time=28.9 ms
+  152  64 bytes from 10.184.23.144: icmp_req=2 ttl=55 time=28.ssh 10.184.23.144
+  153  ssh 10.184.23.144
+  154  exit
+  155  /opt/MegaRAID/storcli/storcli64 /c0 /eall /sall show all | grep -P '(Det|Cou|S\.M|^SN)(?!.*\s(No|0)$)'
+  156  /opt/MegaRAID/storcli/storcli64 /c0 /eall /sall
+  157  storcli /c0 /eall /sall
+  158  /opt/MegaRAID/storcli/storcli64
+  159  /opt/MegaRAID/storcli/storcli64 show all
+  160  /opt/MegaRAID/storcli/storcli64 /c0 show all
+  161  lsblk
+  162  df -k
+  163  exit
+  164  cd /home/osscontrol/.ansible/tmp/
+  165  ls -la
+  166  cd .
+  167  cd
+  168  exit
+  169  netsta t -nr
+  170  netstat -nr
+  171  exit
+  172  icinga2 feature list
+  173  icinga2 feature disable notification
+  174  systemctl restart icinga2
+  175  icinga2 feature list
+  176  exit
+  177  netstat -nr
+  178  netstat -nr
+  179  vi /etc/ssh/ssh_config
+  180  vi /etc/ssh/ssh_config
+  181  visudo
+  182  vi /etc/ssh/ssh_config
+  183  vi /etc/resolv.conf
+  184  apt-get update
+  185  apt-get upgrade
+  186  apt-get install python-dev python-setuptools python-pip git gcc build-essential libssl-dev libffi-dev ipmitool sudo libltdl7 systemd-sysv
+  187  pip install -U pip==9.0.3 --index-url https://pypi.python.org/simple/
+  188  hash -r
+  189  pip install --upgrade distribute setuptools
+  190  pip install pyyaml requests httplib2 ansible==2.1.0.0 virtualenv
+  191  pip uninstall virtualenv ; pip install virtualenv; pip uninstall requests ; pip install requests ; chmod -R a+rX /usr/lib/python*/dist-packages/ ; chmod -R a+rX /usr/local/lib/python*/dist-packages/ ; hash -r
+  192  apt-get remove resolvconf
+  193  reboot
+  194  history
+root@compipesatwdc0401a:~#
+
+root@compute-controllerfra0201c:~# su deploy1720
+cat /home/deploy1720/.ssh/authorized_keys
+visudo
+   33  adduser osscontrol
+   34  usermod -a -G sudo osscontrol
+   35  mkdir /home/osscontrol/.ssh
+   36  vi /home/osscontrol/.ssh/authorized_keys
+   37  chown -R osscontrol:osscontrol /home/osscontrol/.ssh
+   38  chmod 700 /home/osscontrol/.ssh
+   39  deploy1720@compute-controllerfra0201c:/root$ ssh -i /etc/osscontroller/control osscontrol@172.23.128.241

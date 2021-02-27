@@ -1,0 +1,193 @@
+root@ossesdatatok0202o:~# history
+    1  vi /tmp/create-fs.sh
+    2  bash /tmp/create-fs.sh
+    3  mount
+    4  systemctl daemon-reload
+    5  systemctl restart instance1_elasticsearch.service
+    6  exit
+    7  /opt/MegaRAID/storcli/storcli64 /c0 /eall /sall show all
+    8  /opt/MegaRAID/storcli/storcli64 /c0/e8/s11 show all | less
+    9  /opt/MegaRAID/storcli/storcli64 /c0 /eall /sall show
+   10  /opt/MegaRAID/storcli/storcli64 /c0 /eall /sall show all | grep -P '(Det|Cou|S\.M|^SN)(?!.*\s(No|0)$)'
+   11  /opt/MegaRAID/storcli/storcli64 /c0 /eall /sall show
+   12  /opt/MegaRAID/storcli/storcli64 /c0/e8/s11 show all | less
+   13  /opt/MegaRAID/storcli/storcli64 /c0/e8/11 show
+   14  cd /
+   15  /opt/MegaRAID/storcli/storcli64 /c0/e8/11 show
+   16  cat /var/log/syslog | grep XFS | grep sd
+   17  cd
+   18  cat /var/log/syslog | grep XFS | grep sd
+   19  cd /
+   20  /opt/MegaRAID/storcli/storcli64 /c0/e8/s11 show
+   21  cat /var/log/syslog | grep XFS | grep sd
+   22  vi /etc/elasticsearch/instance1/elasticsearch.yml
+   23  cat /var/log/syslog | grep XFS | grep sd
+   24  cat /var/log/syslog.1 | grep XFS | grep sd
+   25  cat /var/log/syslog.2 | grep XFS | grep sd
+   26  cd /var/log
+   27  ls -la
+   28  cd
+   29  cd /
+   30  cat /var/log/syslog.2.gz | grep XFS | grep sd
+   31  cat /var/log/syslog.3.gz | grep XFS | grep sd
+   32  cat /var/log/syslog.4.gz | grep XFS | grep sd
+   33  cat /var/log/syslog.5.gz | grep XFS | grep sd
+   34  cat /var/log/syslog.6.gz | grep XFS | grep sd
+   35  cat /var/log/syslog.7.gz | grep XFS | grep sd
+   36  vi /etc/elasticsearch/instance1/elasticsearch.yml
+   37  vi /etc/systemd/system/multi-user.target.wants/instance1_elasticsearch.service
+   38  vi /etc/systemd/system/multi-user.target.wants/instance1_elasticsearch.service
+   39  umount -l /srv/elasticsearch/sdk
+   40  /etc/fstab
+   41  vi /etc/fstab
+   42  systemctl daemon-reload
+   43  vi /etc/default/instance1_elasticsearch
+   44  systemctl start instance1_elasticsearch
+   45  /var/log/elasticsearch/ossesdatatok0202o-instance1# systemctl status instance1_elasticsearch
+   46  cd /var/log/elasticsearch/ossesdatatok0202o-instance1
+   47  systemctl status instance1_elasticsearch
+   48  cd
+   49  systemctl restart instance1_elasticsearch
+   50  cd /var/log/elasticsearch/ossesdatatok0202o-instance1
+   51  systemctl status instance1_elasticsearch
+   52  cd
+   53  cd /
+   54  /opt/MegaRAID/storcli/storcli64 /c0 show
+   55  /opt/MegaRAID/storcli/storcli64 /c0 show
+   56  storcli64 /c0/e8/s11 set jbod off
+   57  cd
+   58  storcli64 /c0/e8/s11 set jbod off
+   59  /opt/MegaRAID/storcli/storcli64 /c0 /e8/s11 set jbod off
+   60  /opt/MegaRAID/storcli/storcli64/c0/e8/s11 set jbod off
+   61  /opt/MegaRAID/storcli/storcli64 /c0 /e8/s11 set jbod off
+   62  cd /
+   63  /opt/MegaRAID/storcli/storcli64 /c0 /e8/s11 set jbod off
+   64  cd
+   65  /opt/MegaRAID/storcli/storcli64 /c0 show
+   66  /opt/MegaRAID/storcli/storcli64 /c0 show
+   67  vi /etc/elasticsearch/instance1/elasticsearch.yml
+   68  vi /etc/elasticsearch/instance1/elasticsearch.yml
+   69  vi /etc/systemd/system/multi-user.target.wants/instance1_elasticsearch.service
+   70  systemctl daemon-reload
+   71  vi /etc/default/instance1_elasticsearch.service
+   72  vi /etc/default/instance1_elasticsearch
+   73  systemctl restart instance1_elasticsearch
+   74  systemctl status instance1_elasticsearch
+   75  /opt/MegaRAID/storcli/storcli64 /c0 /eall /sall show | grep UGood
+   76  /opt/MegaRAID/storcli/storcli64 /c0 add vd r0 Size=all drives=8:11
+   77  /opt/MegaRAID/storcli/storcli64 /c0 show preservedCache
+   78  /opt/MegaRAID/storcli/storcli64 /c0 show
+   79  /opt/MegaRAID/storcli/storcli64 /c0/v10 show
+   80  /opt/MegaRAID/storcli/storcli64 /c0/v11 show
+   81  /opt/MegaRAID/storcli/storcli64 /c0/v10 delete preservedCache
+   82  /opt/MegaRAID/storcli/storcli64 /c0/v10 show
+   83  /opt/MegaRAID/storcli/storcli64 /c0 show
+   84  /opt/MegaRAID/storcli/storcli64 /c0 show
+   85  /opt/MegaRAID/storcli/storcli64 /c0/v10 delete preservedCache
+   86  /opt/MegaRAID/storcli/storcli64 /c0 show
+   87  /opt/MegaRAID/storcli/storcli64 /c0/v10 show
+   88  /opt/MegaRAID/storcli/storcli64 /c0 show preservedCache
+   89  /opt/MegaRAID/storcli/storcli64 /c0/v10 show
+   90  /opt/MegaRAID/storcli/storcli64 /c0 show preservedCache
+   91  /opt/MegaRAID/storcli/storcli64 /c0 add vd r0 Size=all drives=8:11
+   92  /opt/MegaRAID/storcli/storcli64 /c0/v10 show
+   93  /opt/MegaRAID/storcli/storcli64 /c0 /eall /sall show
+   94  /opt/MegaRAID/storcli/storcli64 /c0/v10 show
+   95  /opt/MegaRAID/storcli/storcli64 /c0 show preservedCache
+   96  /opt/MegaRAID/storcli/storcli64 /c0 /eall /sall show
+   97  /opt/MegaRAID/storcli/storcli64 /c0/v11 show
+   98  /opt/MegaRAID/storcli/storcli64 /c0/v5 show
+   99  /opt/MegaRAID/storcli/storcli64 /c0/v11 show
+  100  /opt/MegaRAID/storcli/storcli64 /c0/v5 show
+  101  /opt/MegaRAID/storcli/storcli64 /c0 show
+  102  /opt/MegaRAID/storcli/storcli64 /c0 show
+  103  /opt/MegaRAID/storcli/storcli64 /c0 show
+  104  /opt/MegaRAID/storcli/storcli64 /c0 show
+  105  cd /
+  106  /opt/MegaRAID/storcli/storcli64 /c0 show
+  107  /opt/MegaRAID/storcli/storcli64 /c0 show
+  108  cd /
+  109  /opt/MegaRAID/storcli/storcli64 /c0 show
+  110  /opt/MegaRAID/storcli/storcli64 /c0/e8/sall
+  111  /opt/MegaRAID/storcli/storcli64 /c0/e8/sall show
+  112  df -vh
+  113  systemctl | grep elastic
+  114  systemctl status instance1_elasticsearch
+  115  cd /var/log/elasticsearch
+  116  ls
+  117  cd ossesdatatok0202o-instance1
+  118  ls
+  119  tail prod_on-tok02.log
+  120  tail -n100 prod_on-tok02.log
+  121  /opt/MegaRAID/storcli/storcli64 /c0 /e8/s11 set good force
+  122  /opt/MegaRAID/storcli/storcli64 /c0 show
+  123  vi /etc/elasticsearch/instance1/elasticsearch.yml
+  124  vi /etc/systemd/system/multi-user.target.wants/instance1_elasticsearch.service
+  125  vi /etc/elasticsearch/instance1/elasticsearch.yml
+  126  systemctl daemon-reload
+  127  vi /etc/default/instance1_elasticsearch
+  128  systemctl restart instance1_elasticsearch
+  129  systemctl status instance1_elasticsearch
+  130  /opt/MegaRAID/storcli/storcli64 /c0 /eall /sall show | grep UGood
+  131  /opt/MegaRAID/storcli/storcli64 /c0 add vd r0 Size=all drives=8:11
+  132  /opt/MegaRAID/storcli/storcli64 /c0 show
+  133  /opt/MegaRAID/storcli/storcli64 /c0 show preservedCache
+  134  /opt/MegaRAID/storcli/storcli64 /c0 show
+  135  /opt/MegaRAID/storcli/storcli64 /c0 /eall /sall show
+  136  /opt/MegaRAID/storcli/storcli64 /c0 show
+  137  cd /etc/
+  138  /opt/MegaRAID/storcli/storcli64 /c0/vall show
+  139  cd
+  140  /opt/MegaRAID/storcli/storcli64 /c0/v10 set rdcache=nora
+  141  /opt/MegaRAID/storcli/storcli64 /c0/v10 set wrcache=wb
+  142  /opt/MegaRAID/storcli/storcli64 /c0/vall show
+  143  ls -lsh /dev/sd*
+  144  /sbin/sgdisk -Z /dev/sdk
+  145  /sbin/sgdisk --clear  /dev/sdk
+  146  /sbin/sgdisk -N 1  /dev/sdk
+  147  /sbin/mkfs.xfs -l internal,size=128m,lazy-count=1 -i size=512 -f  /dev/sdk1
+  148  /sbin/blkid | grep "sdk1" | awk '{print $2}' | awk -F= '{print $2}' | sed 's/"//g'
+  149  vi /etc/fstab
+  150  systemctl daemon-reload
+  151  mount /srv/elasticsearch/sdk
+  152  chown elasticsearch:elasticsearch /srv/elasticsearch/sdk
+  153  chmod 0750 /srv/elasticsearch/sdk
+  154  df -h
+  155  touch  /srv/elasticsearch/sdk/writetest
+  156  cat /srv/elasticsearch/sdk/writetest
+  157  /opt/MegaRAID/storcli/storcli64 /c0/vall show
+  158  ls -lsh /dev/sd*
+  159  /opt/MegaRAID/storcli/storcli64 /c0 /eall /sall show
+  160  cd /
+  161  cat /etc/fstab
+  162  cd /var/log/elasticsearch
+  163  ls
+  164  cd ossesdatatok0202o-instance1
+  165  ls
+  166  tail prod_on-tok02.log
+  167  tail -n100 prod_on-tok02.log
+  168  ls
+  169  tail prod_on-tok02_index_search_slowlog.log
+  170  ls -la *.log
+  171  tail prod_on-tok02_index_indexin_slowlog.log
+  172  tail prod_on-tok02_index_indexing_slowlog.log
+  173  systemctl | grep elastic
+  174  systemctl status instance1_elasticsearch
+  175  cat /etc/elasticsearch/instance1/elasticsearch.yml
+  176  exit
+  177  systemctl status elasticsearch
+  178  systemctl status elasticsearch.service
+  179  service elasticsearch status
+  180  service elasticsearch restart
+  181  systemctl restart instance1_elasticsearch
+  182  systemctl status instance1_elasticsearch
+  183  cd /var/log/elasticsearch/ossesdatatok0202o-instance1
+  184  tail -n100 prod_on-tok02.log
+  185  curl -XGET 'http://10.133.44.196:9200/_cluster/health'
+  186  cd
+  187  curl -XGET 'http://10.133.44.196:9200/_cluster/health'
+  188  tail -n100 prod_on-tok02.log
+  189  cd /var/log/elasticsearch/ossesdatatok0202o-instance1
+  190  tail -n100 prod_on-tok02.log
+  191  history
+root@ossesdatatok0202o:~#

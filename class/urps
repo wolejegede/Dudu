@@ -1,0 +1,43 @@
+{“version” : 1,
+“partitions” : [
+{“replicas” : [1,5,4],
+“topic” : “iaas_compute_prod_in-dal12-geo-syslog”,
+“log_dirs” : [“any”,“any”,“any”],
+“partition” : 3
+},
+{“replicas” : [5,4,1],
+“topic” : “iaas_compute_prod_in-dal12-geo-syslog”,
+“log_dirs” : [“any”,“any”,“any”],
+“partition” : 4
+},
+{“replicas” : [5,4,3],
+“topic” : “iaas_compute_prod_in-dal12-geo-syslog”,
+“log_dirs” : [“any”,“any”,“any”],
+“partition” : 5
+},
+{“replicas” : [5,2,3],
+“topic” : “iaas_compute_prod_in-dal12-geo-syslog”,
+“log_dirs” : [“any”,“any”,“any”],
+“partition” : 6
+},
+{“replicas” : [4,2,1],
+“topic” : “iaas_compute_prod_in-dal12-geo-syslog”,
+“log_dirs” : [“any”,“any”,“any”],
+“partition” : 7
+},
+{“replicas” : [5,4,3],
+“topic” : “iaas_compute_prod_in-dal12-geo-syslog”,
+“log_dirs” : [“any”,“any”,“any”],
+“partition” : 8
+},
+{“replicas” : [5,2,3],
+“topic” : “iaas_compute_prod_in-dal12-geo-syslog”,
+“log_dirs” : [“any”,“any”,“any”],
+“partition” : 9
+},
+{“replicas” : [1,2,4],
+“topic” : “iaas_compute_prod_in-dal12-geo-syslog”,
+“log_dirs” : [“any”,“any”,“any”],
+“partition” : 10
+},
+]

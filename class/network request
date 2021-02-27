@@ -1,0 +1,66 @@
+LON04
+Et47       DL: compmlblon0401a - ETH0                                          connected    101      a-full a-10G  10GBASE-T
+Et48       DL: compmlblon0401a - IPMI                                          connected    133      a-full a-1G   10GBASE-T
+Et48       DL: compmlblon0401a - ETH1                                          connected    16       a-full a-10G  10GBASE-T
+Et3        DL: compmlblon0401b - ETH0                                          connected    101      a-full a-10G  10GBASE-T
+Et4        DL: compmlblon0401b - IPMI                                          connected    133      a-full a-1G   10GBASE-T
+Et48       DL: compmlblon0401b - ETH1                                          connected    16       a-full a-10G  10GBASE-T
+Et35       DL: compmlblon0401c - ETH0                                          connected    101      a-full a-10G  10GBASE-T
+Et36       DL: compmlblon0401c - IPMI                                          connected    133      a-full a-1G   10GBASE-T
+Et34       DL: compmlblon0401c - ETH1                                          connected    16       a-full a-10G  10GBASE-T
+Et25       DL: compmlblon0401d - ETH0                                          connected    101      a-full a-10G  10GBASE-T
+Et26       DL: compmlblon0401d - IPMI                                          connected    133      a-full a-1G   10GBASE-T
+Et26       DL: compmlblon0401d - ETH1                                          connected    16       a-full a-10G  10GBASE-T
+Et15       DL: compmlblon0401e - ETH0                                          connected    101      a-full a-10G  10GBASE-T
+Et16       DL: compmlblon0401e - IPMI                                          connected    133      a-full a-1G   10GBASE-T
+Et16       DL: compmlblon0401e - eth1                                          connected    16       a-full a-10G  10GBASE-T
+TOK04
+Et19       DL: compmlbtok0401a-Eth0                                            connected    101      a-full a-10G  10GBASE-T
+Et20       DL: compmlbtok0401a-IPMI                                            connected    133      a-full a-1G   10GBASE-T
+Et26       DL: compmlbtok0401a-Eth1                                            connected    16       a-full a-10G  10GBASE-T
+Et29       DL: compmlbtok0401b-IPMI                                            connected    133      a-full a-1G   10GBASE-T
+Et30       DL: compmlbtok0401b-Eth0                                            connected    101      a-full a-10G  10GBASE-T
+Et27       DL: compmlbtok0401b-Eth1                                            connected    16       a-full a-10G  10GBASE-T
+Et25       DL: compmlbtok0401c-IPMI                                            connected    133      a-full a-1G   10GBASE-T
+Et26       DL: compmlbtok0401c-Eth0                                            connected    101      a-full a-10G  10GBASE-T
+Et25       DL: compmlbtok0401c-Eth1                                            connected    16       a-full a-10G  10GBASE-T
+Et27       DL: compmlbtok0401d-IPMI                                            connected    133      a-full a-1G   10GBASE-T
+Et28       DL: compmlbtok0401d-Eth0                                            connected    101      a-full a-10G  10GBASE-T
+Et26       DL: compmlbtok0401d-Eth1                                            connected    16       a-full a-10G  10GBASE-T
+Et27       DL: compmlbtok0401e-IPMI                                            connected    133      a-full a-1G   10GBASE-T
+Et28       DL: compmlbtok0401e-Eth0                                            connected    101      a-full a-10G  10GBASE-T
+Et26       DL: compmlbtok0401e-Eth1                                            connected    16       a-full a-10G  10GBASE-T
+TOK05
+Et5        DL: compmlbtok0501a-Eth0                                            connected    101      a-full a-10G  10GBASE-T
+Et6        DL: compmlbtok0501a-IPMI                                            connected    133      a-full a-1G   10GBASE-T
+Et1        DL: compmlbtok0501a-Eth1                                            connected    16       a-full a-10G  10GBASE-T
+Et7        DL: compmlbtok0501b-Eth0                                            connected    101      a-full a-10G  10GBASE-T
+Et8        DL: compmlbtok0501b-IPMI                                            connected    133      a-full a-1G   10GBASE-T
+Et2        DL: compmlbtok0501b-Eth1                                            connected    16       a-full a-10G  10GBASE-T
+Et3        DL: compmlbtok0501c-Eth0                                            connected    101      a-full a-10G  10GBASE-T
+Et4        DL: compmlbtok0501c-IPMI                                            connected    133      a-full a-1G   10GBASE-T
+Et4        DL: compmlbtok0501c-Eth1                                            connected    16       a-full a-10G  10GBASE-T
+Et5        DL: compmlbtok0501d-Eth0                                            connected    101      a-full a-10G  10GBASE-T
+Et6        DL: compmlbtok0501d-IPMI                                            connected    133      a-full a-1G   10GBASE-T
+Et5        DL: compmlbtok0501d-Eth1                                            connected    16       a-full a-10G  10GBASE-T
+Et21       DL: compmlbtok0501e-IPMI                                            connected    133      a-full a-1G   10GBASE-T
+Et22       DL: compmlbtok0501e-Eth0                                            connected    101      a-full a-10G  10GBASE-T
+Et48       DL: compmlbtok0501e-Eth1                                            connected    16       a-full a-10G  10GBASE-T
+
+
+ LON05
+Et45       DL: compmlblon0501a-eth0                                            connected    101      a-full a-10G  10GBASE-T
+Et46       DL: compmlblon0501a-ipmi                                            connected    133      a-full a-1G   10GBASE-T
+Et47       DL: compmlblon0501a - ETH1                                          connected    16       a-full a-10G  10GBASE-T
+Et47       DL: compmlblon0501e-eth0                                            connected    101      a-full a-10G  10GBASE-T
+Et48       DL: compmlblon0501e-ipmi                                            connected    133      a-full a-1G   10GBASE-T
+Et48       DL: compmlblon0501e - ETH1                                          connected    16       a-full a-10G  10GBASE-T
+Et47       DL: compmlblon0501b-eth0                                            connected    101      a-full a-10G  10GBASE-T
+Et48       DL: compmlblon0501b-ipmi                                            connected    133      a-full a-1G   10GBASE-T
+Et48       DL: compmlblon0501b-eth1                                            connected    16       a-full a-10G  10GBASE-T
+Et45       DL: compmlblon0501d-eth0                                            connected    101      a-full a-10G  10GBASE-T
+Et46       DL: compmlblon0501d-ipmi                                            connected    133      a-full a-1G   10GBASE-T
+Et47       DL: compmlblon0501d-eth1                                            connected    16       a-full a-10G  10GBASE-T
+Et47       DL: compmlblon0501c-eth0                                            connected    101      a-full a-10G  10GBASE-T
+Et48       DL: compmlblon0501c-ipmi                                            connected    133      a-full a-1G   10GBASE-T
+Et48       DL: compmlblon0501c-eth1                                            errdisabled  16       a-full a-10G  10GBASE-T

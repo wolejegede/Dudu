@@ -1,0 +1,90 @@
+# example configuration scenarios.
+# Refer to /usr/share/doc/carbon-c-relay/README.md.gz for additional examples!
+
+## mirror all incoming metrics towards destination
+cluster local
+  forward
+    127.0.0.1:{{ gocarbon_port }}
+  ;
+
+
+
+{% if is_graphite_upgrade == true %}
+cluster {{ graphite_cluster }}
+  carbon_ch replication 1
+  {% if 'graphite-data' in groups %}
+  {% for item in groups['graphite-data'] %}
+  {% if hostvars[item]['ansible_host'] != ansible_host %}
+  {{ hostvars[item]['ansible_host'] }}:{{ gocarbon_port }}
+  {% endif %}
+  {% endfor %}
+  {% endif %}
+  ;
+{% endif %}
+
+statistics
+    submit every {{ stats.interval_sec }} seconds
+    prefix with {{ graphite_prefix }}.\_2.relay
+    send to {{ stats.cluster }}
+    stop
+    ;
+
+match * send to local;
+{% if is_graphite_upgrade == true %}
+match * send to {{ graphite_cluster }};
+{% endif %}
+## send all incoming metrics to the first responsive host
+#cluster send-to-any-one
+#  any_of host1:2003 host2:2003;
+#match * send to send-to-any-one;
+
+
+### Diff
+
+{% if stack_env is defined and stack_env == 'prod_on' and datacenter is defined and datacenter == 'dal12' %}
+cluster {{ graphite_cluster }}
+  fnv1a_ch replication 2
+{% if 'graphite-data' in groups and 'ssd_tier' in groups %}
+{% for item in groups['ssd_tier'] %}
+  {{ hostvars[item]['ansible_host'] }}:{{ gocarbon_port }}
+{% endfor %}
+{% endif %}
+  ;
+{% else %}
+## mirror all incoming metrics towards destination
+cluster local
+  forward
+    127.0.0.1:{{ gocarbon_port }}
+  ;
+
+
+
+{% if is_graphite_upgrade == true %}
+cluster {{ graphite_cluster }}
+  carbon_ch replication 1
+{% if 'graphite-data' in groups %}
+{% for item in groups['graphite-data'] %}
+{% if hostvars[item]['ansible_host'] != ansible_host %}
+  {{ hostvars[item]['ansible_host'] }}:{{ gocarbon_port }}
+{% endif %}
+{% endfor %}
+{% endif %}
+  ;
+{% endif %}
+{% endif %}
+
+statistics
+    submit every {{ stats.interval_sec }} seconds
+    prefix with {{ graphite_prefix }}.\_2.relay
+    send to {{ stats.cluster }}
+    stop
+    ;
+
+match * send to local;
+{% if is_graphite_upgrade == true %}
+match * send to {{ graphite_cluster }};
+{% endif %}
+## send all incoming metrics to the first responsive host
+#cluster send-to-any-one
+#  any_of host1:2003 host2:2003;
+#match * send to send-to-any-one;

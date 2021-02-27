@@ -1,0 +1,183 @@
+root@compute-controllerlon0601c:~# history
+    1  read -d '' mirrors <<"EOF"
+    2  deb http://mirrors.softlayer.local/debian wheezy main non-free contrib
+    3  deb-src http://mirrors.softlayer.local/debian wheezy main non-free contrib
+    4  deb http://mirrors.softlayer.local/debian wheezy-updates main contrib non-free
+    5  deb-src http://mirrors.softlayer.local/debian wheezy-updates main contrib non-free
+    6  deb http://mirrors.softlayer.local/debian-security wheezy/updates main contrib non-free
+    7  deb-src http://mirrors.softlayer.local/debian-security wheezy/updates main contrib non-free
+    8  EOF
+    9  echo "${mirrors}" >/etc/apt/sources.list
+   10  vi /etc/apt/sources.list
+   11  vi /etc/network/interfaces
+   12  ifdown eth0
+   13  ifup eth0
+   14  ping 172.20.194.1
+   15  apt-get update
+   16  apt-get upgrade
+   17  vi /etc/apt/sources.list
+   18  apt-get dist-upgrade
+   19  apt-get update
+   20  apt-get upgrade
+   21  reboot
+   22  cat /etc/os-release
+   23  vi /etc/apt/sources.list
+   24  apt-get dist-upgrade
+   25  apt-get update
+   26  apt-get upgrade
+   27  reboot
+   28  cat /etc/os-release
+   29  apt-get update
+   30  apt-get upgrade
+   31  apt-get dist-upgrade
+   32  apt-get update
+   33  apt-get upgrade
+   34  apt --fix-broken install
+   35  cat /etc/os-release
+   36  reboot
+   37  vi /etc/hostname
+   38  hostname -f
+   39  exit
+   40  vi /home/deploy1720/.ssh/authorized_keys
+   41  vi /home/deploy1720/.ssh/authorized_keys
+   42  chown -R deploy1720:deploy1720 /home/deploy1720/.ssh
+   43  chmod 700 /home/deploy1720/.ssh
+   44  visudo
+   45  visudo
+   46  ifconfig
+   47  vi /etc/network/interfaces
+   48  vi /etc/resolv.conf
+   49  ip a s
+   50  ssh -i ~/.ssh/deploy1720 deploy1720@172.28.192.200
+   51  exitifc
+   52  hostname -f
+   53  vi /etc/hostname
+   54  ip a s
+   55  vi /etc/network/interfaces
+   56  vi /etc/apt/sources.list
+   57  ifup eth0
+   58  ifup eth1
+   59  ifup eth2
+   60  ifup eth1:0
+   61  ip a s
+   62  service networking restart
+   63  vi /etc/resolv.conf
+   64  service networking restart
+   65  vi /etc/resolv.conf
+   66  vi /etc/resolv.conf
+   67  service networking restart
+   68  apt-get update
+   69  apt-get upgrade
+   70  apt-get install python-dev python-setuptools python-pip git gcc build-essential libssl-dev libffi-dev ipmitool sudo libltdl7 systemd-sysv
+   71  pip install -U pip==9.0.3 --index-url https://pypi.python.org/simple/
+   72  hash -r
+   73  pip install --upgrade distribute setuptools
+   74  pip install pyyaml requests httplib2 ansible==2.1.0.0 virtualenv
+   75  ping google.com
+   76  ping mirror.softlayer.local
+   77  ping 172.28.192.200
+   78  ping 172.28.210.20
+   79  ip r s
+   80  systemctl restart ssh
+   81  service ssh restart
+   82  systemctl ssh service restart
+   83  apt-get install ssh
+   84  pip uninstall virtualenv ; pip install virtualenv; pip unistall requests ; pip install requests ; chmod -R a+rX /usr/lib/python*/dist-packages/ ; chmod -R a+rX /usr/local/lib/python*/dist-packages/ ; hash -r
+   85  apt-get remove resolvconf
+   86  adduser deploy1720
+   87  usermod -a -G sudo deploy1720
+   88  vi /etc/ssh/sshd_config
+   89  service ssh restart
+   90  ssh
+   91  netstat -nr
+   92  route add default gw 169.254.192.1 dev eth0
+   93  service networking restart
+   94  netstat -nr
+   95  route add default gw 169.254.192.1 dev eth0
+   96  uptime
+   97  vi /etc/network/interfaces
+   98  ifup eth0
+   99  service networking restart
+  100  apt-get update
+  101  apt-get upgrade
+  102  reboot
+  103  history
+  104  apt-get update
+  105  apt-get upgrade
+  106  reboot
+  107  ipmitool -H 169.254.192.141 -U ADMIN chassis power reset
+  108  ipmitool -H 169.254.192.142 -U ADMIN chassis power reset
+  109  ipmitool -H 169.254.192.143 -U ADMIN chassis power reset
+  110  ipmitool -H 169.254.192.144 -U ADMIN chassis power reset
+  111  ipmitool -H 169.254.192.145 -U ADMIN chassis power reset
+  112  tail -f /var/log/nginx/
+  113  tail -f /var/log/nginx/*.log
+  114  cd /
+  115  ls
+  116  cd var/
+  117  ls
+  118  cd lo
+  119  cd log
+  120  ls
+  121  cd nginx/
+  122  ls
+  123  cd
+  124  tail -f /var/log/nginx/access.log
+  125  tail -f /var/log/nginx/access.log
+  126  tail -f /var/log/nginx/access.log
+  127  /opt/vergil/bin/vergil ipxeboot status
+  128  ssh ojegede@compmlblon0601a
+  129  ipmitool -H 169.254.192.141 -U ADMIN chassis bootdev
+  130  ipmitool -H 169.254.192.141 -U ADMIN chassis bootdev pxe
+  131  ipmitool -H 169.254.192.141 -U ADMIN chassis power reset
+  132  ipmitool -H 169.254.192.141 -U ADMIN chassis bootdev pxe
+  133  tail -f /var/log/nginx/access.log | grep 'ac:1f:6b:0a:8e:7e'
+  134  tail -f /var/log/nginx/access.log | grep 'ac:1f:6b:0a:8e:7e'
+  135  vi /etc/network/interfaces
+  136  tail -f /var/log/nginx/access.log | grep 'ac:1f:6b:0a:8e:7e'
+  137  cd /etc/dnsmasq.d/
+  138  ls
+  139  vi ospxeboot.conf
+  140  cat ospxeboot.conf
+  141  cd
+  142  vi /opt/vergil/resources/installscripts/views/run_list.sh.erb
+  143  cat /opt/vergil/resources/installscripts/views/run_list.sh.erb
+  144  systemctl status dnsmasq.service
+  145  journalctl -xe
+  146  vi /opt/vergil/resources/installscripts/views/run_list.sh.erb
+  147  vi ospxeboot.conf
+  148  cat ospxeboot.conf
+  149  ip a s
+  150  vi /etc/network/interfaces
+  151  vi /etc/network/interfaces
+  152  ifdown eth1:0
+  153  vi /etc/network/interfaces
+  154  ifup eth1:0
+  155  service networking restart
+  156  ip a s
+  157  netstat -nr
+  158  ipmitool -H 169.254.192.141 -U ADMIN chassis power reset
+  159  ipmitool -H 169.254.192.142 -U ADMIN chassis power reset
+  160  ipmitool -H 169.254.192.143 -U ADMIN chassis power reset
+  161  ipmitool -H 169.254.192.144 -U ADMIN chassis power reset
+  162  ipmitool -H 169.254.192.145 -U ADMIN chassis power reset
+  163  cat ospxeboot.conf
+  164  tail -f /var/log/nginx/access.log | grep 'ac:1f:6b:0a:8e:7e'
+  165  tail -f /var/log/nginx/access.log
+  166  /opt/vergil/bin/vergil ipxeboot status
+  167  cd /etc/dnsmasq.d/
+  168  ls
+  169  vi ospxeboot.conf
+  170  cd
+  171  tail -f /var/log/nginx/access.log
+  172  tail -f /var/log/nginx/access.log
+  173  /opt/vergil/bin/vergil ipxeboot status
+  174  vi /etc/network/interfaces
+  175  journalctl -e -u dnsmasq
+  176  history
+  cat /etc/apt/sources.list
+  /opt/vergil/bin/vergil ipxeboot status
+  vi /opt/vergil/config/inventory.yaml
+service vergil restart
+/opt/vergil/bin/vergil ipxeboot set ac:1f:6b:0a:93:b6 osinstall x5
+ipmitool -H 169.254.192.141 -I lanplus -U ADMIN -P Bz3NKd9cR4 chassis power status x5

@@ -1,0 +1,10 @@
+apt-get update
+apt-get upgrade
+apt-get install python-dev python-setuptools python-pip git gcc build-essential libssl-dev libffi-dev ipmitool sudo libltdl7 systemd-sysv
+pip install -U pip==9.0.3 --index-url https://pypi.python.org/simple/
+hash -r
+pip install --upgrade distribute setuptools
+pip install pyyaml requests httplib2 ansible==2.1.0.0 virtualenv
+
+pip uninstall virtualenv ; pip install virtualenv; pip uninstall requests ; pip install requests ; chmod -R a+rX /usr/lib/python*/dist-packages/ ; chmod -R a+rX /usr/local/lib/python*/dist-packages/ ; hash -r
+apt-get remove resolvconf

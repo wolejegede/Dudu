@@ -1,0 +1,57 @@
+deploy1720@compute-controllerlon0601c:~$ history
+    1  sudo vi /etc/network/interfaces
+    2  sudo vi /etc/ssh/sshd_config
+    3  service ssh restart
+    4  sudo service ssh restart
+    5  vi /home/deploy1720/.ssh/config
+    6  vi /etc/resolv.conf
+    7  apt-get update
+    8  sudo apt-get update
+    9  vi /etc/resolv.conf
+   10  ping 172.28210.20
+   11  ping 172.28.210.20
+   12  nslookup 172.28.210.20
+   13  netstat -nr
+   14  route add default gw 169.254.192.1 dev eth0
+   15  sudo route add default gw 169.254.192.1 dev eth0
+   16  exit
+   17  ifup eth0
+   18  sudo ifup eth0
+   19  service networking restart
+   20  vi /etc/network/interfaces
+   21  netstat -nr
+   22  ping 172.28.210.20
+   23  ping google.com
+   24  sudo apt-get update
+   25  vi /etc/resolv.conf
+   26  sudo vi /etc/resolv.conf
+   27  vi /etc/resolv.conf
+   28  systemctl
+   29  systemctl restart ssh
+   30  ping google.com
+   31  dpkg -l | grep -i auditd
+   32  systemctl service status
+   33  systemctl status
+   34  systemctl restart ssh
+   35  sudo systemctl restart ssh
+   36  sudo su -
+   37  netstat -nr
+   38  /opt/vergil/bin/vergil ipxeboot status
+   39  cat /opt/vergil/resources/installscripts/views/run_list.sh.erb
+   40  vi /etc/hostname
+   41  ipmitool -H $169.254.192.141 -U ADMIN chassis power reset
+   42  ipmitool -H 169.254.192.141 -U ADMIN chassis power reset
+   43  ipmitool -H $169.254.192.141 -U ADMIN chassis power reset
+   44  ipmitool -H 169.254.192.141 -U ADMIN chassis power reset
+   45  ipmitool -H 169.254.192.142 -U ADMIN chassis power reset
+   46  ipmitool -H 169.254.192.143 -U ADMIN chassis power reset
+   47  ipmitool -H 169.254.192.144 -U ADMIN chassis power reset
+   48  ipmitool -H 169.254.192.145 -U ADMIN chassis power reset
+   49  /opt/vergil/bin/vergil ipxeboot status
+   50  cat /opt/vergil/resources/installscripts/views/run_list.sh.erb
+   51  reboot
+   52  history
+   53  ping 172.28.192.141
+   54  nslookup 172.28.192.141
+   55  sudo su -
+   56  history

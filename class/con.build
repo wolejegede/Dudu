@@ -1,0 +1,49 @@
+login: root/softlayer
+vi /etc/network/interfaces
+ifup eth0/eth1/eth2/eth1:0
+service networking restart
+vi /etc/resolv.conf
+apt-get update
+apt-get upgrade
+reboot
+ip a s
+ip r s
+ping the controller eth1 172. address
+ping the dns server
+vi /etc/hostname
+apt-get install ssh
+vi /etc/ssh/sshd_config
+service ssh restart
+ojegede@oss-managesjc0301:~$ ssh root@172.24.128.140
+root@rhel-i386:~#
+apt-get install python-dev python-setuptools python-pip git gcc build-essential libssl-dev libffi-dev ipmitool sudo libltdl7 systemd-sysv
+pip install -U pip==9.0.3 --index-url https://pypi.python.org/simple/
+hash -r
+pip install --upgrade distribute setuptools
+pip install pyyaml requests httplib2 ansible==2.1.0.0 virtualenv
+pip uninstall virtualenv ; pip install virtualenv; pip uninstall requests ; pip install requests ; chmod -R a+rX /usr/lib/python*/dist-packages/ ; chmod -R a+rX /usr/local/lib/python*/dist-packages/ ; hash -r
+apt-get remove resolvconf
+adduser deploy1720
+usermod -a -G sudo deploy1720
+*********SSH public/private key (already added on the jump)********
+mkdir /home/deploy1720/.ssh
+vi /home/deploy1720/.ssh/authorized_keys
+chown -R deploy1720:deploy1720 /home/deploy1720/.ssh
+chmod 700 /home/deploy1720/.ssh
+visudo
+%sudo ALL=(ALL) NOPASSWD:ALL
+ifconfig
+service networking restart
+vi key(prikey)
+root@rhel-i386:~# ssh -i key deploy1720@172.24.128.140
+deploy1720@rhel-i386:~$
+sudo vi /etc/ssh/sshd_config  (without pwd..ok)permit root login to 'no'
+sudo service ssh restart
+sudo vi /home/deploy1720/.ssh/config  (line15)
+Host *
+    StrictHostKeyChecking no
+Host *
+    StrictHostKeyChecking no
+
+ojegede@oss-managesjc0301:~$ ssh -i key deploy1720@172.24.128.140
+netstat -nr

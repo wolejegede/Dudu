@@ -1,0 +1,36 @@
+---
+- name: "snmp package"
+  hosts: "all,!icingaMaster,!icingaSatellite"
+  become: true
+  tasks:
+    - name: Remove snmp
+      become: true
+      apt:
+        name: snmp
+        state: absent
+        purge: "yes"
+
+    - name: Remove snmp-mibs-downloader
+      become: true
+      apt:
+        name: snmp-mibs-downloader
+        state: absent
+        purge: "yes"
+
+
+      
+- name: Make sure carbonserver is stopped
+  service: name=carbonserver enabled=no state=stopped
+
+- name: Uninstall packages
+  apt:
+    name: "{{ item.name}}={{ item.version }}"
+    state: absent
+    purge: "yes"
+  with_items:
+    - "{{ carbonserver_pkg }}"
+
+- name: Remove the init script for carbonserver
+  file:
+    path: /etc/init.d/carbonserver
+    state: absent
