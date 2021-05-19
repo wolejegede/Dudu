@@ -1,0 +1,181 @@
+#!/bin/bash
+
+# HOSTNAME=$(hostname | cut -d '.' -f 1)
+{% raw %}
+# Get script name and capitalize it for use in syslog
+SCRIPTNAME=${0##*/}
+{% endraw %}
+SCRIPTNAME_NOEXT=${SCRIPTNAME%.*}
+SCRIPTNAME=`echo ${SCRIPTNAME_NOEXT}|tr a-z A-Z`
+
+GRAPHITE_PREFIX="{{ stack_env }}.monitoring.{{ country_code }}.{{ datacenter_type }}.{{ datacenter }}.services.kafka"
+
+KAFKA_CLI_TOOL="{{ cli_lag_bin_dir }}/{{ cli_lag_consumer_group_exec }}"
+
+{% if stack_env == "staging" or stack_env == "local-dev-vergil" or stack_env == "qa" %}
+{% if burrow_ssl_enabled is defined and burrow_ssl_enabled|bool %}
+SERVERS=( {% if 'mlp' in ansible_hostname %}{% for hostname in groups['kafkaOnSL'] %}{{ hostvars[hostname]['ansible_host'] }}:{{ kafka_ssl_port }}{% if not loop.last %} {% endif %}{% endfor %}{% elif 'mlb' in ansible_hostname %}{% for hostname in groups['kafkaInSL'] %}{{ hostvars[hostname]['ansible_host'] }}:{{ kafka_insl_ssl_port }}{% if not loop.last %} {% endif %}{% endfor %}{% endif %} )
+{% else %}
+SERVERS=( {% if 'mlp' in ansible_hostname %}{% for hostname in groups['kafkaOnSL'] %}{{ hostvars[hostname]['ansible_host'] }}:{{ kafka_port }}{% if not loop.last %} {% endif %}{% endfor %}{% elif 'mlb' in ansible_hostname %}{% for hostname in groups['kafkaInSL'] %}{{ hostvars[hostname]['ansible_host'] }}:{{ kafka_in_port }}{% if not loop.last %} {% endif %}{% endfor %}{% endif %} )
+{% endif %}
+{% else %}
+{% if burrow_ssl_enabled is defined and burrow_ssl_enabled|bool %}
+SERVERS=( {% if 'kafkaOnSL' in groups %}{% for hostname in groups['kafkaOnSL'] %}{{ hostvars[hostname]['ansible_host'] }}:{{ kafka_ssl_port }}{% if not loop.last %} {% endif %}{% endfor %}{% elif 'kafkaInSL' in groups %}{% for hostname in groups['kafkaInSL'] %}{{ hostvars[hostname]['ansible_host'] }}:{{ kafka_insl_ssl_port }}{% if not loop.last %} {% endif %}{% endfor %}{% endif %} )
+{% else %}
+SERVERS=( {% if 'kafkaOnSL' in groups %}{% for hostname in groups['kafkaOnSL'] %}{{ hostvars[hostname]['ansible_host'] }}:{{ kafka_port }}{% if not loop.last %} {% endif %}{% endfor %}{% elif 'kafkaInSL' in groups %}{% for hostname in groups['kafkaInSL'] %}{{ hostvars[hostname]['ansible_host'] }}:{{ kafka_in_port }}{% if not loop.last %} {% endif %}{% endfor %}{% endif %} )
+{% endif %}
+{% endif %}
+
+{% if lag_sla_upper_limit is defined %}
+LAG_LIMIT={{ lag_sla_upper_limit }}
+{% else %}
+LAG_LIMIT=0
+{% endif %}
+{% if burrow_mirror_cluster_name is defined and burrow_mirror_http_port is defined %}
+KAFKA_CLUSTER="{{ burrow_mirror_cluster_name }}"
+{% else %}
+KAFKA_CLUSTER="{{ burrow_kafka_cluster_name }}"
+{% endif %}
+
+TIMEOUT_S={{ cli_lag_timeout_secs }}
+TIMEOUT_MS=$((${TIMEOUT_S}*1000))
+{% raw %}
+SERVER_COUNT=${#SERVERS[@]}
+{% endraw %}
+SERVER_NUM=0
+
+echo "INFO - Getting lag numbers for ${KAFKA_CLUSTER}"|logger -i -t ${SCRIPTNAME}
+
+for kafka_inst in "${SERVERS[@]}"
+do
+    SERVER_NUM=$((${SERVER_NUM}+1))
+
+    # Get list of consumer servers on the current server
+    # CONSUMERS=($(${KAFKA_CLI_TOOL} --bootstrap-server ${kafka_inst} --list))
+    # Skip consumer groups for Spark and the console because hundreds of these consumer groups have been created causing this script
+    # to run for over 5 minutes which results in missed metrics because this script is supposed to run every 5 minutes.
+    # Also skip confluent_ksql_damian consumer groups that Damian created.
+{% if burrow_ssl_enabled is defined and burrow_ssl_enabled|bool %}
+    CONSUMERS=($(${KAFKA_CLI_TOOL} --bootstrap-server ${kafka_inst} --list --command-config {{ burrow_ssl_client_conf_file }} | grep -v -e "spark-kafka-source-" -e "console-consumer-" -e "confluent-ksql-damian"))
+{% else %}
+    #CONSUMERS=($(${KAFKA_CLI_TOOL} --bootstrap-server ${kafka_inst} --list --command-config /opt/kafka/config/cli_ssl.properties | grep "logstash-elasticsearch-latest"))
+    #CONSUMERS=($(${KAFKA_CLI_TOOL} --bootstrap-server ${kafka_inst} --list --command-config /opt/kafka/config/cli_ssl.properties | grep "fluentd_at_prod_in"))
+    #CONSUMERS=($(${KAFKA_CLI_TOOL} --bootstrap-server ${kafka_inst} --list --command-config /opt/kafka/config/cli_ssl.properties | grep -v -e "spark-kafka-source-" -e "console-consumer-" -e "confluent-ksql-damian" -e "fluentd-at" -e "logstash-elasticsearch-latest"))
+{% endif %}
+
+    if [[ ${CONSUMERS} != *"Error"* ]]
+    then
+        # echo "DEBUG - Consumer List: ${CONSUMERS[@]}"|logger -i -t ${SCRIPTNAME}
+
+        CONSUMERS=("${CONSUMERS[@]%%:*}")
+        CONSUMER_NUM=0
+
+{% raw %}
+        CONSUMER_COUNT=${#CONSUMERS[@]}
+{% endraw %}
+
+        for consumer in "${CONSUMERS[@]}"
+        do
+            # Set SECONDS to 0
+            SECONDS=0
+
+            CONSUMER_NUM=$((${CONSUMER_NUM}+1))
+
+            # Set lag to 0
+            TOTAL_LAG=0
+
+            # Get lag for the consumer
+{% if burrow_ssl_enabled is defined and burrow_ssl_enabled|bool %}
+            TOTAL_LAG=$(${KAFKA_CLI_TOOL} --timeout ${TIMEOUT_MS} --bootstrap-server ${kafka_inst} --command-config {{ burrow_ssl_client_conf_file }} --group ${consumer} --describe | grep -v '^-' |  awk '{ sum += $6; } END {printf "%.0f",sum;}')
+{% else %}
+            TOTAL_LAG=$(${KAFKA_CLI_TOOL} --timeout ${TIMEOUT_MS} --bootstrap-server ${kafka_inst} --group ${consumer} --describe | grep -v '^-' |  awk '{ sum += $5; } END {printf "%.0f",sum;}')
+
+{% endif %}
+
+            # Check for warnings or errors after querying for the lag
+            if [[ ${TOTAL_LAG} == *"Error:"* || ${TOTAL_LAG} == *"Warning:"* ]]
+            then
+              echo "ERROR - ${consumer} - ${TOTAL_LAG}."|logger -i -t ${SCRIPTNAME}
+            else
+              DURATION=${SECONDS}
+              GRAPHITE_DATE=`date +%s`
+
+              # Set graphite metric path and convert "-" to "_"
+              lag_metric_path=`echo "${GRAPHITE_PREFIX}.${KAFKA_CLUSTER}.${consumer}.total_lag_cli"| sed 's/-/_/g'`
+              req_time_metric_path=`echo "${GRAPHITE_PREFIX}.${KAFKA_CLUSTER}.${consumer}.total_lag_cli_req_time"| sed 's/-/_/g'`
+              lag_sla_metric_path=`echo "${GRAPHITE_PREFIX}.${KAFKA_CLUSTER}.${consumer}.lag_cli_availability_percent"| sed 's/-/_/g'`
+
+              if [[ ( ${TOTAL_LAG} -ge 0 ) && ( ${DURATION} -le ${TIMEOUT_S} ) && ( ${CONSUMER_NUM} -le ${CONSUMER_COUNT} ) ]]
+              then
+
+                  # Got a value and we are not over the number of servers
+                  echo "INFO - ${consumer} - ${lag_metric_path} ${TOTAL_LAG} `date +%s`"|logger -i -t ${SCRIPTNAME}
+                  echo "${lag_metric_path} ${TOTAL_LAG} ${GRAPHITE_DATE}"|nc -q0 {{ graphite_data_host }} {{ graphite_data_port }}
+
+                  # Got a value and we are not over the number of servers
+                  echo "INFO - ${consumer} - ${req_time_metric_path} ${DURATION} `date +%s`"|logger -i -t ${SCRIPTNAME}
+                  echo "${req_time_metric_path} ${DURATION} ${GRAPHITE_DATE}"|nc -q0 {{ graphite_data_host }} {{ graphite_data_port }}
+
+                  # echo "DEBUG - ${consumer} - Consumer Number: ${CONSUMER_NUM}  | Consumer Count: ${CONSUMER_COUNT} | Duration: ${DURATION}"|logger -i -t ${SCRIPTNAME}
+                  # echo "DEBUG - ${consumer} - Server Number: ${SERVER_NUM}  | Servers Count: ${SERVER_COUNT}"|logger -i -t ${SCRIPTNAME}
+                  if [[ ${TOTAL_LAG} -lt ${LAG_LIMIT} ]]
+                  then
+                      sla_availability_percent=`echo $((100-(${TOTAL_LAG}*100/${LAG_LIMIT}))) | bc -l`
+                      echo "INFO - ${consumer} - ${lag_sla_metric_path} ${TOTAL_LAG} `date +%s`"|logger -i -t ${SCRIPTNAME}
+                      echo "${lag_sla_metric_path} ${sla_availability_percent} ${GRAPHITE_DATE}"|nc -q0 {{ graphite_data_host }} {{ graphite_data_port }}
+                  elif [[ ${TOTAL_LAG} -ge ${LAG_LIMIT} ]]
+                  then
+                      sla_availability_percent=0
+                      echo "INFO - ${consumer} - ${lag_sla_metric_path} ${TOTAL_LAG} `date +%s`"|logger -i -t ${SCRIPTNAME}
+                      echo "${lag_sla_metric_path} ${sla_availability_percent} ${GRAPHITE_DATE}"|nc -q0 {{ graphite_data_host }} {{ graphite_data_port }}
+                  fi
+              fi
+
+              if [[ ${DURATION} -ge ${TIMEOUT_S} ]]
+              then
+
+                  if [[ ${TOTAL_LAG} -ge 0  ]]
+          	    then
+                      # Got a value and we are not over the number of servers
+                      echo "INFO - ${consumer} - ${lag_metric_path} ${TOTAL_LAG} `date +%s`"|logger -i -t ${SCRIPTNAME}
+                      echo "${lag_metric_path} ${TOTAL_LAG} ${GRAPHITE_DATE}"|nc -q0 {{ graphite_data_host }} {{ graphite_data_port }}
+                      if [[ ${TOTAL_LAG} -lt ${LAG_LIMIT} ]]
+                      then
+                          sla_availability_percent=`echo $((100-(${TOTAL_LAG}*100/${LAG_LIMIT}))) | bc -l`
+                          echo "INFO - ${consumer} - ${lag_sla_metric_path} ${TOTAL_LAG} `date +%s`"|logger -i -t ${SCRIPTNAME}
+                          echo "${lag_sla_metric_path} ${sla_availability_percent} ${GRAPHITE_DATE}"|nc -q0 {{ graphite_data_host }} {{ graphite_data_port }}
+                      elif [[ ${TOTAL_LAG} -ge ${LAG_LIMIT} ]]
+                      then
+                          sla_availability_percent=0
+                          echo "INFO - ${consumer} - ${lag_sla_metric_path} ${TOTAL_LAG} `date +%s`"|logger -i -t ${SCRIPTNAME}
+                          echo "${lag_sla_metric_path} ${sla_availability_percent} ${GRAPHITE_DATE}"|nc -q0 {{ graphite_data_host }} {{ graphite_data_port }}
+                      fi
+                  fi
+
+                  echo "ERROR - ${consumer} - TIMEOUT ($TIMEOUT_S Secs) Exceeded"|logger -i -t ${SCRIPTNAME}
+                  echo "${req_time_metric_path} ${DURATION} ${GRAPHITE_DATE}"|nc -q0 {{ graphite_data_host }} {{ graphite_data_port }}
+
+                  # echo "DEBUG - ${consumer} - Iteration: ${SERVER_NUM} | Servers Count: ${SERVER_COUNT} | Duration: ${DURATION}"|logger -i -t ${SCRIPTNAME}
+              fi
+            fi
+
+            if [[ ${SERVER_NUM} -eq ${SERVER_COUNT} ]]
+            then
+                echo "ERROR - ${consumer} - Server count Exceeded.  No more servers to try."|logger -i -t ${SCRIPTNAME}
+
+                # echo "DEBUG - ${consumer} - Iteration: ${SERVER_NUM} | Servers Count: ${SERVER_COUNT} | Duration: ${DURATION}"|logger -i -t ${SCRIPTNAME}
+            fi
+
+            if [[ ${CONSUMER_NUM} -eq ${CONSUMER_COUNT} ]]
+            then
+                echo "INFO - ${consumer} - This is the final consumer.  Exiting."|logger -i -t ${SCRIPTNAME}
+                exit 0
+            fi
+        done
+
+    else
+        echo "ERRROR - ${CONSUMERS[@]}"|logger -i -t ${SCRIPTNAME}
+        # echo "DEBUG - ${kafka_inst} - Iteration: ${SERVER_NUM} | Servers Count: ${SERVER_COUNT}"|logger -i -t ${SCRIPTNAME}
+    fi
+
+done
